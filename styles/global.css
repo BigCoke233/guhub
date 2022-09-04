@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #fefefe
+}
+
+svg {
+    display: inline-block;
+    width: 1.1em;
+    height: 1.1em
+}
+
+.content svg {
+    color: #ddd;
+    font-size: .9em
+}
+
+::selection {
+    background: #ddd
+}

@@ -1,209 +1,73 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Btn from '/components/Btn.js';
+import ExL from '/components/ExLink.js';
+import moment from 'moment';
+import { FaBook, FaGithub } from "react-icons/fa";
+
+function Content({ title, children }) {
+  return (
+    <section class="content flex flex-row flex-nowrap my-3">
+      <h2 className="font-semibold shrink-none">{title}</h2>
+      <article className="font-normal pl-3">{children}</article>
+    </section>
+  );
+}
+
+function NameCard({ name, pronounce, description }) {
+  return (<header className="namecard md:flex flex-row justify-items-center">
+    <div className="namecard-avatar flex-shrink w-1/3 mx-auto md:w-16">
+      <img src="/favicon.webp" id="avatar" className="w-max block cursor-pointer select-none" />
+    </div>
+    <div className="namecard-profile mx-3 flex-grow flex flex-col justify-center text-center md:text-left">
+      <h1 className="text-2xl font-bold">{name} <small className="text-lg text-gray-400 font-normal">[{pronounce}]</small></h1>
+      <p className="text-gray-600">{description}</p>
+    </div>
+  </header>)
+}
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Eltrac</title>
+        <link rel="icon" href="/favicon.webp" />
+        <meta charSet='utf-8' />
       </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main className="max-w-xl mx-auto my-12 p-2">
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <NameCard name="Eltrac" pronounce="'eltræk" description="Developer / Blogger / Designer" />
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <section className="quick-link my-4">
+          <p>
+            <Btn link="https://blog.guhub.cn"><FaBook/> 博客</Btn>
+            <Btn link="https://github.com/BigCoke233"><FaGithub/> GitHub</Btn>
+          </p>
+        </section>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+        <section className="content">
+          <Content title="我是">
+            一只来自重庆的考拉，目前还是学生，对前端和游戏设计很感兴趣<br/>
+            一个博主，在维护自己的<ExL link="https://blog.guhub.cn">独立博客</ExL>，时不时产出一些垃圾文字<br/>
+            一个开源工作者，在 GitHub 上有一些项目
+          </Content>
+          <Content title="我会">
+            PHP、JavaScript、React <del>等单词的拼写</del><br/>
+          </Content>
+          <Content title="我在">
+            <a href="mailto:hi@guhub.cn" className="text-purple-300">hi@guhub.cn</a><br/>
+            <a href="https://t.me/Eltrac" className="text-purple-300">Telegram</a><br/>
+            <a href="https://twitter.com/Eltrac233" className="text-purple-300">Twitter</a>
+          </Content>
+          <h2 className="text-center text-gray-600 text-lg bg-gray-50 rounded-sm py-3">该页面还在装修中</h2>
+        </section>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+        <footer className="text-gray-400 text-sm mt-5">
+          <p>Proudly powered by Next.js & Tailwind.css</p>
+          <p>&copy; {moment().format('YYYY')} Eltrac, all rights reserved.</p>
+        </footer>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
   )
 }
