@@ -1,14 +1,17 @@
 import Head from 'next/head';
-import Btn from '/components/Btn.js';
-import ExL from '/components/ExLink.js';
+import { Card, Btn, ExL } from '/components';
+//图标
+import { FaBook, FaGithub, FaTelegramPlane, FaPhp } from "react-icons/fa";
+import { BsEnvelopeFill } from "react-icons/bs";
+import { SiJavascript } from "react-icons/si";
+//获取时间脚本
 import moment from 'moment';
-import { FaBook, FaGithub } from "react-icons/fa";
 
 function Content({ title, children }) {
   return (
-    <section className="content flex flex-row flex-nowrap my-3">
+    <section className="content flex flex-row flex-nowrap my-6">
       <h2 className="font-semibold flex-shrink-0">{title}</h2>
-      <article className="font-normal pl-3">{children}</article>
+      <article className="font-normal pl-3 flex-grow">{children}</article>
     </section>
   );
 }
@@ -51,14 +54,25 @@ export default function Home() {
             一个博主，在维护自己的<ExL link="https://blog.guhub.cn">独立博客</ExL>，时不时产出一些垃圾文字<br/>
             一个开源工作者，在 GitHub 上有一些项目
           </Content>
+
           <Content title="我会">
-            PHP、JavaScript、React <del>等单词的拼写</del><br/>
+            <span className="bg-yellow-500 text-white text-sm py-0.5 px-1.5 rounded-sm select-none mr-1">JavaScript</span>
+            <span className="bg-indigo-500 text-white text-sm py-0.5 px-1.5 rounded-sm select-none mr-1">PHP</span>
+            <span className="bg-blue-300 text-white text-sm py-0.5 px-1.5 rounded-sm select-none mr-1">React</span>
           </Content>
+      
           <Content title="我在">
-            <a href="mailto:hi@guhub.cn" className="text-purple-300">hi@guhub.cn</a><br/>
-            <a href="https://t.me/Eltrac" className="text-purple-300">Telegram</a><br/>
-            <a href="https://twitter.com/Eltrac233" className="text-purple-300">Twitter</a>
+            各个社交平台，以下是推荐的联系方式。
+            <div className="flex flex-row my-2 w-full flex-wrap gap-y-2">
+              <Card link="mailto:hi@guhub.cn" text="hi@guhub.cn" des="通过邮箱联系我" size="small">
+                <span className="text-yellow-400 block"><BsEnvelopeFill/></span>
+              </Card>
+              <Card link="https://t.me/Eltrac" text="Telegram" des="推荐的即时通讯方式" size="small">
+                <span className="text-blue-500 block"><FaTelegramPlane/></span>
+              </Card>
+            </div>
           </Content>
+
           <h2 className="text-center text-gray-600 text-lg bg-gray-50 rounded-sm py-3">该页面还在装修中</h2>
         </section>
 
