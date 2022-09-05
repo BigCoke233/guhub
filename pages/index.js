@@ -6,8 +6,8 @@ import { FaBook, FaGithub } from "react-icons/fa";
 
 function Content({ title, children }) {
   return (
-    <section class="content flex flex-row flex-nowrap my-3">
-      <h2 className="font-semibold shrink-none">{title}</h2>
+    <section className="content flex flex-row flex-nowrap my-3">
+      <h2 className="font-semibold flex-shrink-0">{title}</h2>
       <article className="font-normal pl-3">{children}</article>
     </section>
   );
@@ -34,12 +34,12 @@ export default function Home() {
         <meta charSet='utf-8' />
       </Head>
 
-      <main className="max-w-xl mx-auto my-12 p-2">
+      <main className="max-w-xl mx-auto my-12 py-2 px-4">
 
         <NameCard name="Eltrac" pronounce="'eltræk" description="Developer / Blogger / Designer" />
 
         <section className="quick-link my-4">
-          <p>
+          <p className="flex flex-row justify-center md:block">
             <Btn link="https://blog.guhub.cn"><FaBook/> 博客</Btn>
             <Btn link="https://github.com/BigCoke233"><FaGithub/> GitHub</Btn>
           </p>
