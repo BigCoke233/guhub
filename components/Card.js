@@ -1,7 +1,15 @@
 export default function Card({ size, children, text, des, link }){
+    var classDefault = 'card-body block w-full';
+    var classFinal = classDefault
     if(size=='small'){
-        return (
-        <a href={link} target="_blank" className="card-body block w-full md:w-1/2">
+        classFinal = classDefault+' card-small md:w-1/2'
+    }
+    else if(size=='tiny'){
+        classFinal = classDefault+' card-tiny md:w-1/3'
+    }
+    
+    return (
+        <a href={link} target="_blank" className={classFinal}>
             <div className="card flex flex-row items-center w-full
             px-3 py-2 bg-gray-50 border rounded-sm 
             transition duration-300 hover:bg-gray-100">
@@ -12,6 +20,6 @@ export default function Card({ size, children, text, des, link }){
                 </div>
             </div>
         </a>
-        )
-    }
+    )
+    
 }

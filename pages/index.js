@@ -1,16 +1,15 @@
 import Head from 'next/head';
 import { Card, Btn, ExL } from '/components';
+import { Nav, Footer } from '/includes';
 //图标
-import { FaBook, FaGithub, FaTelegramPlane, FaPhp } from "react-icons/fa";
+import { FaBook, FaGithub, FaTelegramPlane } from "react-icons/fa";
 import { BsEnvelopeFill } from "react-icons/bs";
-import { SiJavascript } from "react-icons/si";
-//获取时间脚本
-import moment from 'moment';
+import { data } from 'autoprefixer';
 
 function Content({ title, children }) {
   return (
     <section className="content flex flex-row flex-nowrap my-6">
-      <h2 className="font-semibold flex-shrink-0">{title}</h2>
+      <h2 className="font-semibold flex-shrink-0 text-md">{title}</h2>
       <article className="font-normal pl-3 flex-grow">{children}</article>
     </section>
   );
@@ -37,6 +36,8 @@ export default function Home() {
         <meta charSet='utf-8' />
       </Head>
 
+      <Nav />
+
       <main className="max-w-xl mx-auto my-12 py-2 px-4">
 
         <NameCard name="Eltrac" pronounce="'eltræk" description="Developer / Blogger / Designer" />
@@ -61,27 +62,24 @@ export default function Home() {
             <span className="bg-blue-300 text-white text-sm py-0.5 px-1.5 rounded-sm select-none mr-1">React</span>
           </Content>
       
-          <Content title="我在">
-            各个社交平台，以下是推荐的联系方式。
-            <div className="flex flex-row my-2 w-full flex-wrap gap-y-2">
-              <Card link="mailto:hi@guhub.cn" text="hi@guhub.cn" des="通过邮箱联系我" size="small">
-                <span className="text-yellow-400 block"><BsEnvelopeFill/></span>
-              </Card>
-              <Card link="https://t.me/Eltrac" text="Telegram" des="推荐的即时通讯方式" size="small">
-                <span className="text-blue-500 block"><FaTelegramPlane/></span>
-              </Card>
-            </div>
+          <Content title="&emsp;&emsp;">
+            <p>......</p>
           </Content>
 
           <h2 className="text-center text-gray-600 text-lg bg-gray-50 rounded-sm py-3">该页面还在装修中</h2>
         </section>
 
-        <footer className="text-gray-400 text-sm mt-5">
-          <p>Proudly powered by Next.js & Tailwind.css</p>
-          <p>&copy; {moment().format('YYYY')} Eltrac, all rights reserved.</p>
-        </footer>
+        <Footer/>
 
       </main>
     </div>
   )
+}
+
+//获取我的 GitHub 数据
+export async function getServerSideProps() {
+  const res = await fetch(`https://api.github.com/users/BigCoke233`)
+  const data = await res.json()
+
+  return { props: { data } }
 }

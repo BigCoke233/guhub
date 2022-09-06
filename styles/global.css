@@ -13,11 +13,18 @@ svg {
 }
 
 @media (min-width: 768px){
-    .card-body:nth-of-type(odd){
+    .card-small.card-body:nth-of-type(odd){
         padding-right: .25rem
     }
-    .card-body:nth-of-type(even){
+    .card-small.card-body:nth-of-type(even){
         padding-left: .25rem
+    }
+
+    .card-tiny.card-body:nth-of-type(odd){
+        padding: 0 .25rem
+    }
+    .card-tiny.card-body:nth-of-type(even){
+        padding: 0 .25rem
     }
 }
 
