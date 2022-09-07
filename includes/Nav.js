@@ -12,15 +12,15 @@ export default function Nav() {
     return (
         <header className="
         fixed top-0 inset-x-0 w-full
-        flex flex-row justify-between items-center p-4 px-6
+        flex flex-row justify-center md:justify-between items-center p-4
         backdrop-filter backdrop-blur-md bg-opacity-70 bg-white
         ">
-            <div className="nav-title">
+            <div className="nav-title hidden md:block">
                 <h1 className="font-bold text-lg">Eltrac</h1>
             </div>
             <div className="nav-content">
-                <Item link="/">Home</Item>
-                <Item link="/social">Social</Item>
+                <Item link="/">首页</Item>
+                <Item link="/social">社交</Item>
             </div>
         </header>
     )
