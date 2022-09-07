@@ -27,8 +27,7 @@ function NameCard({ name, pronounce, description }) {
   </header>)
 }
 
-export default function Home() {
-  return (
+const Index = () => (
     <div className="container">
       <Head>
         <title>Eltrac</title>
@@ -73,13 +72,6 @@ export default function Home() {
 
       </main>
     </div>
-  )
-}
+)
 
-//获取我的 GitHub 数据
-export async function getServerSideProps() {
-  const res = await fetch(`https://api.github.com/users/BigCoke233`)
-  const data = await res.json()
-
-  return { props: { data } }
-}
+export default Index;
