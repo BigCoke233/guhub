@@ -18,7 +18,7 @@ function Content({ title, children }) {
 function NameCard({ name, pronounce, description }) {
   return (<header className="namecard md:flex flex-row justify-items-center">
     <div className="namecard-avatar flex-shrink w-1/3 mx-auto md:w-16">
-      <img src="/favicon.webp" id="avatar" className="w-max block cursor-pointer select-none" />
+      <img src="/favicon.webp" id="avatar" className="w-max block cursor-pointer select-none transition" />
     </div>
     <div className="namecard-profile mx-3 flex-grow flex flex-col justify-center text-center md:text-left">
       <h1 className="text-2xl font-bold">{name} <small className="text-lg text-gray-400 font-normal">[{pronounce}]</small></h1>
