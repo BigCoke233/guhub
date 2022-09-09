@@ -19,10 +19,10 @@
      */
     const avatar = document.getElementById('avatar');
     avatar.addEventListener('click', function(){ 
-        avatar.setAttribute('style','animation: shake 4s');
+        avatar.setAttribute('style','animation: shake 2s');
         setTimeout(function(){
             avatar.setAttribute('style','animation: none');
-        }, 1000)
+        }, 500)
     })
 
 })();

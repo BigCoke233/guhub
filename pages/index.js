@@ -1,10 +1,8 @@
 import Head from 'next/head';
-import { Card, Btn, ExL } from '/components';
+import { Progress, Btn, ExL, Tag } from '/components';
 import { Nav, Footer } from '/includes';
 //图标
-import { FaBook, FaGithub, FaTelegramPlane } from "react-icons/fa";
-import { BsEnvelopeFill } from "react-icons/bs";
-import { data } from 'autoprefixer';
+import { FaBook, FaGithub } from "react-icons/fa";
 
 function Content({ title, children }) {
   return (
@@ -56,10 +54,16 @@ const Index = ({ gh }) => (
             一个开源工作者，在 GitHub 上有一些项目
           </Content>
 
-          <Content title="我会">
-            <span className="bg-yellow-500 text-white text-sm py-0.5 px-1.5 rounded-sm select-none mr-1">JavaScript</span>
-            <span className="bg-indigo-500 text-white text-sm py-0.5 px-1.5 rounded-sm select-none mr-1">PHP</span>
-            <span className="bg-blue-300 text-white text-sm py-0.5 px-1.5 rounded-sm select-none mr-1">React</span>
+          <Content title="我用">
+            <div className="class-init hidden
+            bg-yellow-500 bg-indigo-500 bg-blue-300 bg-slate-700 bg-blue-600 bg-blue-500"></div>
+
+            <Tag color="yellow-500">JavaScript</Tag>
+            <Tag color="blue-500">TypeScript</Tag>
+            <Tag color="indigo-500">PHP</Tag>
+            <Tag color="blue-300">React</Tag>
+            <Tag color="slate-700">Next.js</Tag>
+            <Tag color="blue-600">Lua</Tag>
           </Content>
       
           <Content title="我有">
@@ -67,6 +71,20 @@ const Index = ({ gh }) => (
               <span className="font-semibold">{gh.followers}</span> 个 GitHub 关注者，
               <span className="font-semibold">{gh.public_repos}</span> 个仓库
             </p>
+          </Content>
+          
+          <Content title="我会">
+
+            <div className="class-init hidden w-0 w-1/2 w-1/3 w-2/3 w-1/4 w-3/4 w-1/5 w-2/5 w-3/5 w-4/5 w-1/6 w-5/6 w-1/12 w-5/12 w-7/12 w-11/12"></div>
+
+            <Progress text="内容创作">3/5</Progress>
+            <Progress text="前端设计">2/3</Progress>
+            <Progress text="后端">5/12</Progress>
+            <Progress text="编故事">7/12</Progress>
+            <Progress text="搞砸事情">full</Progress>
+            <Progress text="社交">1/12</Progress>
+            
+
           </Content>
 
           <Content title="我想">
@@ -80,7 +98,6 @@ const Index = ({ gh }) => (
             </ul>
           </Content>
 
-          <h2 className="text-center text-gray-600 text-lg bg-gray-50 rounded-sm py-3">该页面还在装修中</h2>
         </section>
 
         <Footer/>
