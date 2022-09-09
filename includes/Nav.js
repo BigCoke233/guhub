@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 function Item({link, children}) {
     return <Link href={link}><a className="
-    mx-0.5 py-3 md:py-5 px-2 rounded-sm
+    mx-0.5 py-3 md:py-5 px-2 md:px-3 rounded-sm
     hover:bg-gray-100 transition 
     ">{children}</a></Link>
 }
