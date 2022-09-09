@@ -18,11 +18,13 @@
      * 头像点击动画
      */
     const avatar = document.getElementById('avatar');
-    avatar.addEventListener('click', function(){ 
-        avatar.setAttribute('style','animation: shake 2s');
-        setTimeout(function(){
-            avatar.setAttribute('style','animation: none');
-        }, 500)
-    })
+    if(avatar!=undefined){
+        avatar.addEventListener('click', function(){ 
+            avatar.setAttribute('style','animation: shake 2s');
+            setTimeout(function(){
+                avatar.setAttribute('style','animation: none');
+            }, 500)
+        })
+    }
 
 })();

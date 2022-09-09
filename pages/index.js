@@ -26,7 +26,7 @@ function NameCard({ name, pronounce, description }) {
 }
 
 const Index = ({ gh }) => (
-    <div className="container">
+    <div className="w-full">
 
       <Head>
         <title>Eltrac</title>
@@ -58,12 +58,14 @@ const Index = ({ gh }) => (
             <div className="class-init hidden
             bg-yellow-500 bg-indigo-500 bg-blue-300 bg-slate-700 bg-blue-600 bg-blue-500"></div>
 
-            <Tag color="yellow-500">JavaScript</Tag>
-            <Tag color="blue-500">TypeScript</Tag>
-            <Tag color="indigo-500">PHP</Tag>
-            <Tag color="blue-300">React</Tag>
-            <Tag color="slate-700">Next.js</Tag>
-            <Tag color="blue-600">Lua</Tag>
+            <p className="leading-8 md:leading-6">
+              <Tag color="yellow-500">JavaScript</Tag>
+              <Tag color="blue-500">TypeScript</Tag>
+              <Tag color="indigo-500">PHP</Tag>
+              <Tag color="blue-300">React</Tag>
+              <Tag color="slate-700">Next.js</Tag>
+              <Tag color="blue-600">Lua</Tag>
+            </p>
           </Content>
       
           <Content title="我有">

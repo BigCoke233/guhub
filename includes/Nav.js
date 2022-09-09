@@ -21,6 +21,7 @@ export default function Nav() {
             <div className="nav-content md:mr-4">
                 <Item link="/">首页</Item>
                 <Item link="/social">社交</Item>
+                <Item link="/collections">收藏</Item>
             </div>
         </header>
     )
