@@ -17,7 +17,7 @@ export default function Social() {
   
         <Nav />
   
-        <main className="max-w-3xl mx-auto my-12 py-2 px-4">
+        <main className="max-w-3xl mx-auto mt-12 mb-2 py-2 px-4">
 
           <Heading meta="在互联网上找到我的踪迹。">社交媒体</Heading>
 
@@ -53,9 +53,9 @@ export default function Social() {
 
           </section>
   
-          <Footer/>
-  
         </main>
+
+        <Footer/>
       </div>
     )
   }

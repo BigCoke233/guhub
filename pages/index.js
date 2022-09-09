@@ -36,7 +36,7 @@ const Index = ({ gh }) => (
 
       <Nav />
 
-      <main className="max-w-xl mx-auto my-12 py-2 px-4">
+      <main className="max-w-xl mx-auto mt-12 mb-2 py-2 px-4">
 
         <NameCard name="Eltrac" pronounce="'eltræk" description="Developer / Blogger / Designer" />
 
@@ -100,9 +100,9 @@ const Index = ({ gh }) => (
 
         </section>
 
-        <Footer/>
-
       </main>
+
+      <Footer/>
     </div>
 )
 
