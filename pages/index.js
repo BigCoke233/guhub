@@ -24,7 +24,7 @@ function NameCard({ name, pronounce, description }) {
   </header>)
 }
 
-export default function Index(gh){
+export default function Index(){
 
   //头像点击动画
   React.useEffect(() => {
@@ -71,26 +71,20 @@ export default function Index(gh){
               <Tag color="green-500">Lua</Tag>
             </p>
           </Content>
-      
-          <Content title="我有">
-            <p>
-              <span className="font-semibold">{gh.followers}</span> 个 GitHub 关注者，
-              <span className="font-semibold">{gh.public_repos}</span> 个仓库
-            </p>
-          </Content>
           
           <Content title="我会">
 
             <div className="class-init hidden w-0 w-1/2 w-1/3 w-2/3 w-1/4 w-3/4 w-1/5 w-2/5 w-3/5 w-4/5 w-1/6 w-5/6 w-1/12 w-5/12 w-7/12 w-11/12"></div>
 
-            <Progress text="内容创作">3/5</Progress>
-            <Progress text="前端设计">2/3</Progress>
-            <Progress text="后端">5/12</Progress>
-            <Progress text="编故事">7/12</Progress>
-            <Progress text="搞砸事情">11/12</Progress>
-            <Progress text="社交">1/12</Progress>
+            <div className="-mt-2 md:mt-0">
+              <Progress text="内容创作">3/5</Progress>
+              <Progress text="前端设计">2/3</Progress>
+              <Progress text="后端">5/12</Progress>
+              <Progress text="编故事">7/12</Progress>
+              <Progress text="搞砸事情">11/12</Progress>
+              <Progress text="社交">1/12</Progress>
+            </div>
             
-
           </Content>
 
           <Content title="我想">
@@ -108,14 +102,4 @@ export default function Index(gh){
 
       </main>
   )
-}
-
-export async function getStaticProps() {
-  const gh = await fetch('https://api.github.com/users/BigCoke233?client_id=fdff1c9b6c604f37a215&client_secret=f94cf7fc0eb31a438b270044bc354bdc8ede6480').then(res => res.json());
-
-  return {
-    props: {
-      gh
-    }
-  }
 }
