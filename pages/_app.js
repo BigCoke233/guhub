@@ -1,12 +1,11 @@
 import '../styles/global.css';
-import "nprogress/nprogress.css";
 
 import Head from 'next/head';
 import { Nav, Footer } from '/includes';
 
 import * as React from "react";
 import Router from "next/router";
-import NProgress from "nprogress";
+import NextNProgress from "nextjs-progressbar";
 import Darkmode from 'darkmode-js';
 
 export default function App({ Component, pageProps }) {
@@ -23,18 +22,6 @@ export default function App({ Component, pageProps }) {
     }
     Router.events.on('routeChangeStart', pageFade);
     Router.events.on('routeChangeComplete', pageFade);
-
-    //启用 nProgress
-    const handleRouteStart = () => NProgress.start();
-    const handleRouteDone = () => NProgress.done();
-    Router.events.on("routeChangeStart", handleRouteStart);
-    Router.events.on("routeChangeComplete", handleRouteDone);
-    Router.events.on("routeChangeError", handleRouteDone);
-    return () => {
-        Router.events.off("routeChangeStart", handleRouteStart);
-        Router.events.off("routeChangeComplete", handleRouteDone);
-        Router.events.off("routeChangeError", handleRouteDone);
-    };
   }, []);
 
   //启用夜间模式
@@ -56,6 +43,7 @@ export default function App({ Component, pageProps }) {
           <link rel="icon" href="/favicon.webp" />
           <meta charSet='utf-8' />
       </Head>
+      <NextNProgress color="rgb(34,197,94)"/>
       <Nav />
       <Component {...pageProps} />
       <Footer />
