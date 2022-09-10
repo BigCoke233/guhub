@@ -1,7 +1,5 @@
-import Head from 'next/head';
 import * as React from 'react';
 import { Progress, Btn, ExL, Tag } from '/components';
-import { Nav, Footer } from '/includes';
 //图标
 import { FaBook, FaGithub } from "react-icons/fa";
 
@@ -42,16 +40,6 @@ export default function Index(gh){
   }, []);
 
   return(
-    <div className="w-full" id="container">
-
-      <Head>
-        <title>Eltrac</title>
-        <link rel="icon" href="/favicon.webp" />
-        <meta charSet='utf-8' />
-      </Head>
-
-      <Nav />
-
       <main className="max-w-xl mx-auto mt-12 mb-2 py-2 px-4">
 
         <NameCard name="Eltrac" pronounce="'eltræk" description="Developer / Blogger / Designer" />
@@ -119,9 +107,6 @@ export default function Index(gh){
         </section>
 
       </main>
-
-      <Footer/>
-    </div>
   )
 }
 

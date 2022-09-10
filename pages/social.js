@@ -1,6 +1,4 @@
-import Head from 'next/head';
 import { Heading, Card } from '/components';
-import { Nav, Footer } from '/includes';
 
 import { FaTelegramPlane, FaStore, FaGithub } from "react-icons/fa";
 import { BsEnvelopeFill, BsTwitter } from "react-icons/bs";
@@ -8,15 +6,6 @@ import { RiBilibiliLine, RiDoubanFill } from "react-icons/ri";
 
 export default function Social() {
     return (
-      <div className="w-full" id="container">
-        <Head>
-          <title>Eltrac</title>
-          <link rel="icon" href="/favicon.webp" />
-          <meta charSet='utf-8' />
-        </Head>
-  
-        <Nav />
-  
         <main className="max-w-3xl mx-auto mt-12 mb-2 py-2 px-4">
 
           <Heading meta="在互联网上找到我的踪迹。">社交媒体</Heading>
@@ -60,9 +49,6 @@ export default function Social() {
           </section>
   
         </main>
-
-        <Footer/>
-      </div>
     )
   }
   

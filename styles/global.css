@@ -12,6 +12,14 @@ svg {
     font-size: 1.2em
 }
 
+#container {
+    transition: opacity .3s;
+}
+
+.fadeout {
+    opacity: 0
+}
+
 @media (min-width: 768px){
     .card-small.card-body:nth-of-type(odd){
         padding-right: .25rem
