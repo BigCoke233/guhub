@@ -94,8 +94,12 @@ export default function Index(){
               <li>拥有一台 PlayStation</li>
               <li>有一个懂我的朋友或爱人</li>
               <li>养一只萨摩耶，一只鹦鹉和两只猫</li>
-              <li>永远积极快乐</li>
+              <li>被人记住，哪怕只有很少的一些</li>
             </ul>
+          </Content>
+
+          <Content title="我说">
+            <p className="text-shadow font-semibold antialiased">「永远对自己坦诚相见。」💜</p>
           </Content>
 
         </section>
