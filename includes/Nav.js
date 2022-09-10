@@ -70,7 +70,9 @@ export default function Nav() {
         backdrop-filter backdrop-blur-md bg-opacity-70 bg-white transition duration-300
         " id="nav">
             <div className="nav-title hidden p-4 md:block">
-                <h1 className="font-bold text-lg">Eltrac</h1>
+                <h1 className="font-bold text-lg">
+                    <Link href="/"><a>Eltrac</a></Link>
+                </h1>
             </div>
             <div className="nav-content md:mr-4">
                 <Item link="/">首页</Item>
