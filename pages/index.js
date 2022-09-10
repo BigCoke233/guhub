@@ -40,7 +40,7 @@ export default function Index(gh){
   }, []);
 
   return(
-      <main className="max-w-xl mx-auto mt-14 mb-2 py-2 px-4">
+      <main className="max-w-xl mx-auto mt-16 mb-2 py-2 px-4">
 
         <NameCard name="Eltrac" pronounce="'eltræk" description="Developer / Blogger / Designer" />
 

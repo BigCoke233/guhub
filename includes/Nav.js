@@ -64,7 +64,7 @@ export default function Nav() {
     }, [])
     return (
         <header className="
-        fixed top-0 inset-x-0 w-full p-4 md:p-0
+        fixed top-0 inset-x-0 w-full px-4 py-2 md:p-0
         flex flex-row justify-center md:justify-between items-center
         backdrop-filter backdrop-blur-md bg-opacity-70 bg-white transition duration-300
         " id="nav">
