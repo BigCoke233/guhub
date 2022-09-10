@@ -74,10 +74,11 @@ export default function Nav() {
             </div>
             <div className="nav-content md:mr-4">
                 <Item link="/">首页</Item>
+                <Item link="/blogpost">文章</Item>
                 <Item link="/collections">收藏</Item>
                 <Dropdown text="更多+" id='more'>
                     <Drop link="/social">社交</Drop>
-                    <Drop link="/">关于</Drop>
+                    <Drop link="https://blog.guhub.cn">博客</Drop>
                 </Dropdown>
             </div>
         </header>

@@ -20,7 +20,7 @@ export default function Collections() {
           <section className="content">
 
             <Content title="友情链接">
-              请到我博客的<ExL link="https://blog.guhub.cn/pals.html">友人</ExL>页面查看友情链接，后续会将友情链接搬到这个页面
+              <p className="leading-8">请到我博客的<ExL link="https://blog.guhub.cn/pals.html">友人</ExL>页面查看友情链接，后续会将友情链接搬到这个页面</p>
             </Content>
 
             <Content title="我的项目">
