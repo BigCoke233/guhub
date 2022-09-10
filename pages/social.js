@@ -1,6 +1,6 @@
 import { Heading, Card } from '/components';
 
-import { FaTelegramPlane, FaStore, FaGithub } from "react-icons/fa";
+import { FaTelegramPlane, FaStore, FaGithub, FaSteam } from "react-icons/fa";
 import { BsEnvelopeFill, BsTwitter } from "react-icons/bs";
 import { RiBilibiliLine, RiDoubanFill } from "react-icons/ri";
 
@@ -31,6 +31,9 @@ export default function Social() {
                 </Card>
                 <Card link="https://space.bilibili.com/384247770" text="Bilibili" des="偶尔做做搬运和听译。" size="tiny">
                     <span className="text-pink-400 block"><RiBilibiliLine/></span>
+                </Card>
+                <Card link="https://steamcommunity.com/profiles/76561198812226260" text="Steam" des="我主要的游戏平台" size="tiny">
+                    <span className="text-blue-800 block"><FaSteam/></span>
                 </Card>
                 <Card link="https://www.douban.com/people/eltrac/" text="豆瓣" des="其实不怎么活跃。" size="tiny">
                     <span className="text-green-500 block"><RiDoubanFill/></span>
