@@ -11,11 +11,33 @@ svg {
     vertical-align: middle;
     font-size: 1.2em
 }
+.card-icon svg {
+    margin-left: .2rem;
+    margin-right: .2rem
+}
 
+/* 淡入动画 */
+.fadein-animate {
+    animation: fadeIn ease-in .3s;
+    -webkit-animation: fadeIn ease-in .3s;
+}
+.dropdown:not(.fadein-animate) {
+    animation: fadeOut ease-in .3s;
+    -webkit-animation: fadeOut ease-in .3s;
+}
+@keyframes fadeIn {
+    from { opacity:0; transform: translateY(-1em) }
+    to {opacity:1; transform:translateY(0)}
+}
+@keyframes fadeOut {
+    to { opacity:0; transform: translateY(-1em) }
+    from {opacity:1; transform:translateY(0)}
+}
+
+/* 页面切换动画 */
 #container {
     transition: opacity .3s;
 }
-
 .fadeout {
     opacity: 0
 }

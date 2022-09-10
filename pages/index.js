@@ -40,7 +40,7 @@ export default function Index(gh){
   }, []);
 
   return(
-      <main className="max-w-xl mx-auto mt-12 mb-2 py-2 px-4">
+      <main className="max-w-xl mx-auto mt-14 mb-2 py-2 px-4">
 
         <NameCard name="Eltrac" pronounce="'eltræk" description="Developer / Blogger / Designer" />
 
@@ -87,7 +87,7 @@ export default function Index(gh){
             <Progress text="前端设计">2/3</Progress>
             <Progress text="后端">5/12</Progress>
             <Progress text="编故事">7/12</Progress>
-            <Progress text="搞砸事情">full</Progress>
+            <Progress text="搞砸事情">11/12</Progress>
             <Progress text="社交">1/12</Progress>
             
 
