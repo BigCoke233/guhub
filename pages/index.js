@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import * as React from 'react';
 import { Progress, Btn, ExL, Tag } from '/components';
 import { Nav, Footer } from '/includes';
 //图标
@@ -25,8 +26,23 @@ function NameCard({ name, pronounce, description }) {
   </header>)
 }
 
-const Index = ({ gh }) => (
-    <div className="w-full">
+export default function Index(gh){
+
+  //头像点击动画
+  React.useEffect(() => {
+    const avatar = document.getElementById('avatar');
+    if(avatar!=undefined){
+        avatar.addEventListener('click', function(){ 
+            avatar.setAttribute('style','animation: shake 2s');
+            setTimeout(function(){
+                avatar.setAttribute('style','animation: none');
+            }, 500)
+        })
+    }
+  }, []);
+
+  return(
+    <div className="w-full" id="container">
 
       <Head>
         <title>Eltrac</title>
@@ -106,7 +122,8 @@ const Index = ({ gh }) => (
 
       <Footer/>
     </div>
-)
+  )
+}
 
 export async function getStaticProps() {
   const gh = await fetch('https://api.github.com/users/BigCoke233?client_id=fdff1c9b6c604f37a215&client_secret=f94cf7fc0eb31a438b270044bc354bdc8ede6480').then(res => res.json());
@@ -117,5 +134,3 @@ export async function getStaticProps() {
     }
   }
 }
-
-export default Index;

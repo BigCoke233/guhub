@@ -4,7 +4,7 @@ import { Nav, Footer } from '/includes';
 
 export default function Collections() {
     return (
-      <div className="w-full">
+      <div className="w-full" id="container">
         <Head>
           <title>Eltrac</title>
           <link rel="icon" href="/favicon.webp" />

@@ -8,7 +8,7 @@ import { RiBilibiliLine, RiDoubanFill } from "react-icons/ri";
 
 export default function Social() {
     return (
-      <div className="w-full">
+      <div className="w-full" id="container">
         <Head>
           <title>Eltrac</title>
           <link rel="icon" href="/favicon.webp" />
