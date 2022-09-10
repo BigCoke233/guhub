@@ -1,6 +1,6 @@
 export default function Progress({ text, children }){
 
-    var classList = 'progress-bar h-3 bg-indigo-400 select-none w-'+children;
+    var classList = 'progress-bar h-3 bg-green-500 select-none w-'+children;
 
     return(
         <section className="md:flex md:flex-row md:flex-nowrap">

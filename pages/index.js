@@ -56,7 +56,7 @@ const Index = ({ gh }) => (
 
           <Content title="我用">
             <div className="class-init hidden
-            bg-yellow-500 bg-indigo-500 bg-blue-300 bg-slate-700 bg-blue-600 bg-blue-500"></div>
+            bg-yellow-500 bg-indigo-500 bg-blue-300 bg-slate-700 bg-blue-600 bg-blue-500 bg-green-500"></div>
 
             <p className="leading-8 md:leading-6">
               <Tag color="yellow-500">JavaScript</Tag>
@@ -64,7 +64,7 @@ const Index = ({ gh }) => (
               <Tag color="indigo-500">PHP</Tag>
               <Tag color="blue-300">React</Tag>
               <Tag color="slate-700">Next.js</Tag>
-              <Tag color="blue-600">Lua</Tag>
+              <Tag color="green-500">Lua</Tag>
             </p>
           </Content>
       
