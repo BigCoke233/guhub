@@ -1,5 +1,5 @@
 export default function Tag({ color, children, link }){
-    var classList = "inline-block text-sm py-0.5 px-1.5 rounded-sm select-none mr-1 transition-color duration-300";
+    var classList = "tag inline-block text-sm py-0.5 px-1.5 rounded-sm select-none mr-1 transition-color duration-300";
     if(color!=null){
         classList = classList+' text-white bg-'+color
     }

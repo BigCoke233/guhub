@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "darkmode-js": "^1.5.7",
     "moment": "^2.29.4",
     "next": "latest",
     "nprogress": "^0.2.0",

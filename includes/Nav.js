@@ -9,7 +9,7 @@ function Item({link, children}) {
 }
 
 function Drop({link, children}) {
-    return <Link href={link}><a className="
+    return <Link href={link}><a className="dropdown-item
     px-2 md:px-5 py-1.5 inline-block md:block md:border-b border-gray-100
     hover:bg-gray-50 transition duration-300
     ">{children}</a></Link>
@@ -37,7 +37,7 @@ function Dropdown({text, children, id}) {
     }, []);
 
     return (
-        <div className="
+        <div className="dropdown-box
         mx-0.5 py-3 md:py-5 px-2 cursor-pointer
         hover:bg-gray-100 transition inline-block"
         id={id}
@@ -65,7 +65,7 @@ export default function Nav() {
     }, [])
     return (
         <header className="
-        fixed top-0 inset-x-0 w-full px-4 py-2 md:p-0
+        fixed top-0 inset-x-0 w-full px-4 py-2 md:p-0 z-50
         flex flex-row justify-center md:justify-between items-center
         backdrop-filter backdrop-blur-md bg-opacity-70 bg-white transition duration-300
         " id="nav">

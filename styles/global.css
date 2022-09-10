@@ -16,6 +16,37 @@ svg {
     margin-right: .2rem
 }
 
+#nav .dropdown-item:last-child {
+    border: none
+}
+
+/* 深色模式 */
+.darkmode--activated #nav {
+    background-color: #000;
+    color: #fff
+}
+
+.darkmode--activated #nav a:hover,
+.darkmode--activated #nav .dropdown-box:hover {
+    background-color: #333
+}
+
+.darkmode--activated #nav .dropdown-item,
+.darkmode--activated #nav .dropdown {
+    background-color: #111;
+    border-color: #333
+}
+
+.darkmode--activated .card,
+.darkmode--activated a.tag,
+.darkmode--activated .btn {
+    background-color: #ddd
+}
+
+.darkmode--activated .blogpost-item {
+    border-color: #ccc
+}
+
 /* 淡入动画 */
 .fadein-animate {
     animation: fadeIn ease-in .3s;
@@ -60,6 +91,26 @@ svg {
 
 ::selection {
     background: #ddd
+}
+
+/* ScrollBar */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 5px
+}
+::-webkit-scrollbar-button {
+	display: none
+}
+::-webkit-scrollbar-thumb {
+	background: rgb(34,197,94);
+	transition: .2s
+}
+
+.darkmode--activated::-webkit-scrollbar {
+    background: #000
+}
+.darkmode--activated::-webkit-scrollbar-thumb {
+	background: rgb(221,58,161);
 }
 
 @keyframes shake {
