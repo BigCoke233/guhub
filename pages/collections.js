@@ -4,9 +4,9 @@ import { BsTranslate, BsEmojiSunglassesFill, BsSpeedometer } from 'react-icons/b
 
 function Content({ title, children }) {
   return (
-    <section className="content flex flex-row flex-nowrap my-6">
-      <h2 className="font-bold flex-shrink-0 text-md">{title}</h2>
-      <article className="font-normal pl-3 flex-grow">{children}</article>
+    <section className="content md:flex flex-row flex-nowrap my-6">
+      <h2 className="font-bold flex-shrink-0 my-3 md:my-0 text-xl md:text-md">{title}</h2>
+      <article className="font-normal md:pl-3 flex-grow">{children}</article>
     </section>
   );
 }
