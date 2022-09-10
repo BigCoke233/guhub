@@ -10,7 +10,7 @@ function Item({link, children}) {
 
 function Drop({link, children}) {
     return <Link href={link}><a className="
-    px-5 py-1.5 block border-b border-gray-100
+    px-2 md:px-5 py-1.5 inline-block md:block md:border-b border-gray-100
     hover:bg-gray-50 transition duration-300
     ">{children}</a></Link>
 }
@@ -42,7 +42,8 @@ function Dropdown({text, children, id}) {
         hover:bg-gray-100 transition inline-block"
         id={id}
         >{text}
-            <div className="dropdown hidden fixed top-16 right-4 mt-2 clear
+            <div className="dropdown hidden fixed top-16 right-1 left-1 md:left-auto md:right-4
+            mt-2 p-2 md:p-0 text-center
             shadow bg-white rounded-sm overflow-hidden">{children}</div>
         </div>
     )
