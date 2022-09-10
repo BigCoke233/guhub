@@ -1,4 +1,6 @@
 import { Heading, ExL, Card, Tag } from '/components';
+import Head from 'next/head';
+
 import { SiPixabay, SiNotion } from 'react-icons/si'
 import { BsTranslate, BsEmojiSunglassesFill, BsSpeedometer } from 'react-icons/bs'
 
@@ -14,6 +16,8 @@ function Content({ title, children }) {
 export default function Collections() {
     return (
         <main className="max-w-3xl mx-auto mt-12 mb-2 py-2 px-4">
+
+          <Head><title>收藏夹 - Eltrac</title></Head>
 
           <Heading meta="个人比较喜欢的项目和网站">收藏夹</Heading>
 

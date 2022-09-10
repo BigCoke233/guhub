@@ -1,4 +1,5 @@
-import { Heading, ExL, Card, Tag } from '/components';
+import { Heading, ExL } from '/components';
+import Head from 'next/head';
 import Parser from "rss-parser";
 
 export default function Collections(data) {
@@ -16,6 +17,7 @@ export default function Collections(data) {
     });
     return (
         <main className="max-w-3xl mx-auto mt-12 mb-2 py-2 px-4">
+          <Head><title>博客文章 - Eltrac</title></Head>
           <div className="class-init hidden items-center text-sm flex flex-row justify-between flex-nowrap p-4 text-xl font-semibold mb-2 my-2 border border-slate-200 rounded-sm text-gray-500" />
 
           <Heading meta="我博客的最新文章列表">博客文章</Heading>

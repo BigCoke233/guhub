@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Progress, Btn, ExL, Tag } from '/components';
+import Head from 'next/head';
 //图标
 import { FaBook, FaGithub } from "react-icons/fa";
 
@@ -41,6 +42,8 @@ export default function Index(){
 
   return(
       <main className="max-w-xl mx-auto mt-16 mb-2 py-2 px-4">
+
+        <Head><title>Eltrac</title></Head>
 
         <NameCard name="Eltrac" pronounce="'eltræk" description="Developer / Blogger / Designer" />
 

@@ -1,4 +1,5 @@
 import { Heading, Card } from '/components';
+import Head from 'next/head';
 
 import { FaTelegramPlane, FaStore, FaGithub, FaSteam } from "react-icons/fa";
 import { BsEnvelopeFill, BsTwitter } from "react-icons/bs";
@@ -7,6 +8,8 @@ import { RiBilibiliLine, RiDoubanFill } from "react-icons/ri";
 export default function Social() {
     return (
         <main className="max-w-3xl mx-auto mt-12 mb-2 py-2 px-4">
+
+          <Head><title>社交媒体 - Eltrac</title></Head>
 
           <Heading meta="在互联网上找到我的踪迹。">社交媒体</Heading>
 

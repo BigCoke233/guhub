@@ -39,7 +39,6 @@ export default function App({ Component, pageProps }) {
   return (
     <div id="container">
       <Head>
-          <title>Eltrac</title>
           <link rel="icon" href="/favicon.webp" />
           <meta charSet='utf-8' />
       </Head>
