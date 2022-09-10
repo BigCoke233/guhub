@@ -1,5 +1,5 @@
 import { Heading, ExL, Card, Tag } from '/components';
-import { SiPixabay } from 'react-icons/si'
+import { SiPixabay, SiNotion } from 'react-icons/si'
 import { BsTranslate, BsEmojiSunglassesFill, BsSpeedometer } from 'react-icons/bs'
 
 function Content({ title, children }) {
@@ -68,7 +68,7 @@ export default function Collections() {
             </Content>
 
             <Content title="实用工具">
-                <p className="leading-7">
+                <p className="leading-8">
                   <Tag link="https://tool.lu/"><SiPixabay/> Pixabay <small className="font-normal">高质量免费图片素材</small></Tag>
                   <Tag link="https://www.deepl.com/translator"><BsTranslate/> DeepL <small className="font-normal">基于 AI 的机器翻译</small></Tag>
                   <Tag link="https://shields.io/">Shields <small className="font-normal">生成 GitHub 徽章</small></Tag>
@@ -76,6 +76,7 @@ export default function Collections() {
                   <Tag link="https://pagespeed.web.dev/"><BsSpeedometer /> PageSpeed Insight <small className="font-normal">谷歌的网页测速工具</small></Tag>
                   <Tag link="https://tool.lu/">在线工具 <small className="font-normal">tool.lu</small></Tag>
                   <Tag link="https://learn-english.dev/">程序员英语词汇宝典 <small className="font-normal">必备的计算机术语</small></Tag>
+                  <Tag link="https://www.notion.so/"><SiNotion/> Notion <small className="font-normal">强大的笔记应用</small></Tag>
                 </p>
             </Content>
 
