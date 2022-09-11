@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import * as React from 'react';
+import Darkmode from 'darkmode-js';
+
+import {CgDarkMode} from 'react-icons/cg' 
 
 function Item({link, children}) {
     return <Link href={link}><a className="
@@ -10,7 +13,7 @@ function Item({link, children}) {
 
 function Drop({link, children}) {
     return <Link href={link}><a className="dropdown-item
-    px-2 md:px-5 py-1.5 inline-block md:block md:border-b border-gray-100
+    px-2 md:px-0 py-1.5 inline-block md:block md:border-b border-gray-100
     hover:bg-gray-50 transition duration-300
     ">{children}</a></Link>
 }
@@ -37,12 +40,12 @@ function Dropdown({text, children, id}) {
     }, []);
 
     return (
-        <div className="dropdown-box
+        <div className="dropdown-box md:relative z-40
         mx-0.5 py-3 md:py-5 px-2 cursor-pointer
         hover:bg-gray-100 transition inline-block"
         id={id}
         >{text}
-            <div className="dropdown hidden fixed top-16 right-1 left-1 md:left-auto md:right-4
+            <div className="dropdown hidden fixed top-16 right-1 left-1 md:absolute md:left-0 md:right-0 md:top-14
             mt-2 p-2 md:p-0 text-center
             shadow bg-white rounded-sm overflow-hidden">{children}</div>
         </div>
@@ -51,6 +54,13 @@ function Dropdown({text, children, id}) {
 
 
 export default function Nav() {
+    //启用夜间模式
+    const options = {
+        time: '0.5s', // default: '0.3s'
+        saveInCookies: false // default: true,
+    }
+    const darkmode = new Darkmode(options);
+
     React.useEffect(() => {
         const nav = document.getElementById('nav');
         var headroom = function(){
@@ -62,6 +72,11 @@ export default function Nav() {
         }
         headroom();
         window.addEventListener('scroll', headroom);
+
+        const darkBtn = document.getElementById('darkmode');
+        darkBtn.addEventListener('click', function(){
+            darkmode.toggle();
+        });
     }, [])
     return (
         <header className="
@@ -82,6 +97,10 @@ export default function Nav() {
                     <Drop link="/social">社交</Drop>
                     <Drop link="https://blog.guhub.cn">博客</Drop>
                 </Dropdown>
+                <button className="
+                mx-0.5 py-3 md:py-5 px-2 inline-block
+                hover:bg-gray-100 transition 
+                " id="darkmode"><CgDarkMode/></button>
             </div>
         </header>
     )

@@ -21,13 +21,17 @@ svg {
 }
 
 /* 深色模式 */
+#nav {
+    transition-duration: 0!important
+}
 .darkmode--activated #nav {
     background-color: #000;
     color: #fff
 }
 
 .darkmode--activated #nav a:hover,
-.darkmode--activated #nav .dropdown-box:hover {
+.darkmode--activated #nav .dropdown-box:hover,
+.darkmode--activated #nav button:hover {
     background-color: #333
 }
 
