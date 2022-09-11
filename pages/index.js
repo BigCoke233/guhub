@@ -102,7 +102,7 @@ export default function Index(){
           </Content>
 
           <Content title="我说">
-            <p className="text-shadow font-semibold antialiased">「永远对自己坦诚相见。」💜</p>
+            <p className="text-shadow italic antialiased">永远对自己坦诚相见。</p>
           </Content>
 
         </section>

@@ -48,9 +48,9 @@ function Dropdown({text, children, id}) {
         hover:bg-gray-100 transition inline-block"
         id={id}
         >{text}<IoMdArrowDropdown/>
-            <div className="dropdown hidden fixed top-16 right-1 left-1 md:absolute md:left-0 md:right-0 md:top-14
+            <div className="dropdown hidden fixed top-14 right-1 left-1 md:absolute md:left-0 md:right-0 md:top-14
             mt-2 p-2 md:p-0 text-center
-            shadow bg-white rounded-sm overflow-hidden">{children}</div>
+            shadow bg-opacity-90 bg-white rounded-sm overflow-hidden">{children}</div>
         </div>
     )
 }
