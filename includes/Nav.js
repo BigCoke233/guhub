@@ -2,7 +2,8 @@ import Link from 'next/link'
 import * as React from 'react';
 import Darkmode from 'darkmode-js';
 
-import {CgDarkMode} from 'react-icons/cg' 
+import { CgDarkMode } from 'react-icons/cg' 
+import { IoMdArrowDropdown } from 'react-icons/io'
 
 function Item({link, children}) {
     return <Link href={link}><a className="
@@ -27,11 +28,13 @@ function Dropdown({text, children, id}) {
         btn.addEventListener('click', function(){
             if(dropdown.classList.contains('hidden')){
                 dropdown.classList.add('fadein-animate');
-                dropdown.classList.remove('hidden')
+                dropdown.classList.remove('hidden');
+                btn.classList.add('open');
                 nav.setAttribute('style', 'box-shadow: 0 1px 4px 0 rgb(0 0 0 / 0.05)');
             }else{
                 if(document.documentElement.scrollTop==0) nav.setAttribute('style', 'box-shadow: 0 0 0 0 #fff');
                 dropdown.classList.remove('fadein-animate');
+                btn.classList.remove('open');
                 setTimeout(function(){
                     dropdown.classList.add('hidden')
                 }, 280)
@@ -44,7 +47,7 @@ function Dropdown({text, children, id}) {
         mx-0.5 py-3 md:py-5 px-2 cursor-pointer
         hover:bg-gray-100 transition inline-block"
         id={id}
-        >{text}
+        >{text}<IoMdArrowDropdown/>
             <div className="dropdown hidden fixed top-16 right-1 left-1 md:absolute md:left-0 md:right-0 md:top-14
             mt-2 p-2 md:p-0 text-center
             shadow bg-white rounded-sm overflow-hidden">{children}</div>
@@ -93,7 +96,7 @@ export default function Nav() {
                 <Item link="/">首页</Item>
                 <Item link="/blogpost">文章</Item>
                 <Item link="/collections">收藏</Item>
-                <Dropdown text="更多+" id='more'>
+                <Dropdown text="更多" id='more'>
                     <Drop link="/social">社交</Drop>
                     <Drop link="https://blog.guhub.cn">博客</Drop>
                 </Dropdown>

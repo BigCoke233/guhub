@@ -16,8 +16,16 @@ svg {
     margin-right: .2rem
 }
 
+/* dropdown */
 #nav .dropdown-item:last-child {
     border: none
+}
+
+.dropdown-box svg {
+    transition: transform .3s
+}
+.dropdown-box.open svg {
+    transform: rotate(90deg)
 }
 
 /* 深色模式 */
