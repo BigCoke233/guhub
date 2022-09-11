@@ -99,6 +99,7 @@ export default function Nav() {
                 <Dropdown text="更多" id='more'>
                     <Drop link="/social">社交</Drop>
                     <Drop link="https://blog.guhub.cn">博客</Drop>
+                    <Drop link="https://doc.guhub.cn">文档</Drop>
                 </Dropdown>
                 <button className="
                 mx-0.5 py-3 md:py-5 px-2 inline-block
