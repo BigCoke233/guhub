@@ -2,14 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
+
 body {
-    background: #fefefe
+    font-family: 'Noto Sans SC', sans-serif;
 }
 
 svg {
     display: inline-block;
     vertical-align: middle;
     font-size: 1.2em
+}
+.exl svg,
+.tag svg {
+    font-size: 1em
 }
 .card-icon svg {
     margin-left: .2rem;
@@ -107,14 +113,13 @@ svg {
 
 /* ScrollBar */
 ::-webkit-scrollbar {
-	width: 6px;
-	height: 5px
+	width: 3px;
 }
 ::-webkit-scrollbar-button {
 	display: none
 }
 ::-webkit-scrollbar-thumb {
-	background: rgb(34,197,94);
+	background: rgb(71,85,105);
 	transition: .2s
 }
 

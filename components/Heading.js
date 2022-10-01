@@ -6,7 +6,7 @@ export default function Heading({children, meta}){
         return (
             <header className={headerClass}>
                 <h1 className="text-4xl font-bold my-2">{children}</h1>
-                <p className="text-gray-400 text-sm">{meta}</p>
+                <p className="text-gray-400">{meta}</p>
             </header>
         )
     }else{

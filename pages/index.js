@@ -6,7 +6,7 @@ import { FaBook, FaGithub } from "react-icons/fa";
 
 function Content({ title, children }) {
   return (
-    <section className="content flex flex-row flex-nowrap my-6">
+    <section className="content flex flex-row flex-nowrap my-6 text-lg">
       <h2 className="font-bold flex-shrink-0 text-md">{title}</h2>
       <article className="font-normal pl-3 flex-grow">{children}</article>
     </section>
@@ -15,33 +15,20 @@ function Content({ title, children }) {
 
 function NameCard({ name, pronounce, description }) {
   return (<header className="namecard md:flex flex-row justify-items-center">
-    <div className="namecard-avatar flex-shrink w-1/3 mx-auto md:w-16">
-      <img src="/favicon.webp" id="avatar" className="w-max block cursor-pointer select-none transition" />
+    <div className="namecard-avatar flex-shrink w-1/3 mx-auto md:w-16 rounded-full border-2 border-slate-600 bg-slate-600">
+      <img src="/favicon.png" id="avatar" className="w-max block cursor-pointer select-none transition scale-125" />
     </div>
-    <div className="namecard-profile mx-3 flex-grow flex flex-col justify-center text-center md:text-left">
-      <h1 className="text-2xl font-bold">{name} <small className="text-lg text-gray-400 font-normal">[{pronounce}]</small></h1>
-      <p className="text-gray-600">{description}</p>
+    <div className="namecard-profile flex-grow flex flex-col justify-center text-center mt-5 md:mt-0 md:text-left md:ml-3">
+      <h1 className="text-3xl font-bold">{name} <small className="text-lg text-gray-400 font-normal">[{pronounce}]</small></h1>
+      <p className="text-slate-600">{description}</p>
     </div>
   </header>)
 }
 
 export default function Index(){
 
-  //头像点击动画
-  React.useEffect(() => {
-    const avatar = document.getElementById('avatar');
-    if(avatar!=undefined){
-        avatar.addEventListener('click', function(){ 
-            avatar.setAttribute('style','animation: shake 2s');
-            setTimeout(function(){
-                avatar.setAttribute('style','animation: none');
-            }, 500)
-        })
-    }
-  }, []);
-
   return(
-      <main className="max-w-xl mx-auto mt-16 mb-2 py-2 px-4">
+      <main className="max-w-xl mx-auto mt-24 mb-2 py-2 px-4">
 
         <Head><title>Eltrac</title></Head>
 
@@ -56,8 +43,8 @@ export default function Index(){
 
         <section className="content">
           <Content title="我是">
-            一只来自重庆的考拉，目前还是学生，对前端和游戏设计很感兴趣<br/>
-            一个博主，在维护自己的<ExL link="https://blog.guhub.cn">独立博客</ExL>，时不时产出一些垃圾文字<br/>
+            一只来自重庆的考拉，对前端和游戏设计很感兴趣<br/>
+            一个博主，在维护自己的<ExL link="https://blog.guhub.cn">独立博客</ExL>，经常产出一些垃圾文字<br/>
             一个开源工作者，在 GitHub 上有一些项目
           </Content>
 
@@ -71,7 +58,6 @@ export default function Index(){
               <Tag color="indigo-500">PHP</Tag>
               <Tag color="blue-300">React</Tag>
               <Tag color="slate-700">Next.js</Tag>
-              <Tag color="green-500">Lua</Tag>
             </p>
           </Content>
           

@@ -7,13 +7,13 @@ import { RiBilibiliLine, RiDoubanFill } from "react-icons/ri";
 
 export default function Social() {
     return (
-        <main className="max-w-3xl mx-auto mt-12 mb-2 py-2 px-4">
+        <main className="max-w-3xl mx-auto mt-20 mb-2 py-2 px-4">
 
           <Head><title>社交媒体 - Eltrac</title></Head>
 
           <Heading meta="在互联网上找到我的踪迹。">社交媒体</Heading>
 
-          <section className="content">
+          <section className="content text-lg">
 
             <p className="my-4">你可以通过以下方式直接联系我，通常不接受 QQ/微信 好友申请。</p>
 

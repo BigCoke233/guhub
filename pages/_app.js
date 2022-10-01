@@ -26,10 +26,10 @@ export default function App({ Component, pageProps }) {
   return (
     <div id="container">
       <Head>
-          <link rel="icon" href="/favicon.webp" />
+          <link rel="icon" href="/favicon.png" />
           <meta charSet='utf-8' />
       </Head>
-      <NextNProgress color="rgb(34,197,94)"/>
+      <NextNProgress color="rgb(71,85,105)"/>
       <Nav />
       <Component {...pageProps} />
       <Footer />

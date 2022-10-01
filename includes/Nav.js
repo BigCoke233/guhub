@@ -49,7 +49,7 @@ function Dropdown({text, children, id}) {
         id={id}
         >{text}<IoMdArrowDropdown/>
             <div className="dropdown hidden fixed top-14 right-1 left-1 md:absolute md:left-0 md:right-0 md:top-14
-            mt-2 p-2 md:p-0 text-center
+            mt-2 p-2 md:p-0 text-center border-2 border-slate-600
             shadow bg-opacity-90 bg-white rounded-sm overflow-hidden">{children}</div>
         </div>
     )
@@ -85,7 +85,8 @@ export default function Nav() {
         <header className="
         fixed top-0 inset-x-0 w-full px-4 py-2 md:p-0 z-50
         flex flex-row justify-center md:justify-between items-center
-        backdrop-filter backdrop-blur-md bg-opacity-70 bg-white transition duration-300
+        bg-white transition duration-300
+        border-b-2 border-slate-600
         " id="nav">
             <div className="nav-title hidden p-4 md:block">
                 <h1 className="font-bold text-lg">
@@ -95,11 +96,10 @@ export default function Nav() {
             <div className="nav-content md:mr-4">
                 <Item link="/">首页</Item>
                 <Item link="/blogpost">文章</Item>
-                <Item link="/collections">收藏</Item>
+                <Item link="/projects">项目</Item>
                 <Dropdown text="更多" id='more'>
                     <Drop link="/social">社交</Drop>
-                    <Drop link="https://blog.guhub.cn">博客</Drop>
-                    <Drop link="https://doc.guhub.cn">文档</Drop>
+                    <Drop link="/collections">收藏</Drop>
                 </Dropdown>
                 <button className="
                 mx-0.5 py-3 md:py-5 px-2 inline-block

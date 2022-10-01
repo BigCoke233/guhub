@@ -15,17 +15,13 @@ function Content({ title, children }) {
 
 export default function Collections() {
     return (
-        <main className="max-w-3xl mx-auto mt-12 mb-2 py-2 px-4">
+        <main className="max-w-3xl mx-auto mt-20 mb-2 py-2 px-4">
 
           <Head><title>收藏夹 - Eltrac</title></Head>
 
           <Heading meta="个人比较喜欢的项目和网站">收藏夹</Heading>
 
           <section className="content">
-
-            <Content title="友情链接">
-              <p className="leading-8">请到我博客的<ExL link="https://blog.guhub.cn/pals.html">友人</ExL>页面查看友情链接，后续会将友情链接搬到这个页面</p>
-            </Content>
 
             <Content title="我的项目">
               <div className="flex flex-wrap gap-y-2">

@@ -4,7 +4,7 @@ import { ExL } from '/components'
 
 export default function Footer(){
     return(
-    <footer className="text-gray-400 text-sm text-center py-10 px-2">
+    <footer className="text-center border-t-2 border-slate-600 py-10 px-2">
         <p>bulit with&nbsp;
           <a href="https://github.com/facebook/react" title="React" target="_blank"><TbBrandReactNative/></a>&nbsp;
           <a href="https://nextjs.org/" title="Next.js" target="_blank"><TbBrandNextjs/></a>&nbsp;

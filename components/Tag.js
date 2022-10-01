@@ -4,10 +4,10 @@ export default function Tag({ color, children, link }){
         classList = classList+' text-white bg-'+color
     }
     else if(link!=null){
-        classList = classList+' text-black font-semibold bg-slate-100 hover:bg-slate-200'
+        classList = classList+' font-semibold border-2 border-slate-600 hover:shadow hover:-translate-y-0.5'
     }
     else{
-        classList = classList+' bg-slate-100 text-black'
+        classList = classList+' border-2 border-slate-600'
     }
 
     if(link!=null){
