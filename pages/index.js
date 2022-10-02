@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { Progress, Btn, ExL, Tag } from '/components';
 import Head from 'next/head';
+
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/material.css';
 //图标
 import { FaBook, FaGithub } from "react-icons/fa";
 
@@ -15,8 +19,8 @@ function Content({ title, children }) {
 
 function NameCard({ name, pronounce, description }) {
   return (<header className="namecard md:flex flex-row justify-items-center">
-    <div className="namecard-avatar flex-shrink w-1/3 mx-auto md:w-16 rounded-full border-2 border-slate-600 bg-slate-600">
-      <img src="/favicon.png" id="avatar" className="w-max block cursor-pointer select-none transition scale-125" />
+    <div data-tippy-content="给大佬磕个头" id="avatar" className="namecard-avatar flex-shrink w-1/3 mx-auto md:w-16 rounded-full border-2 border-slate-600 bg-slate-600">
+      <img src="/favicon.png" className="w-max block cursor-pointer select-none transition scale-125" />
     </div>
     <div className="namecard-profile flex-grow flex flex-col justify-center text-center mt-5 md:mt-0 md:text-left md:ml-3">
       <h1 className="text-3xl font-bold">{name} <small className="text-lg text-gray-400 font-normal">[{pronounce}]</small></h1>
@@ -26,6 +30,26 @@ function NameCard({ name, pronounce, description }) {
 }
 
 export default function Index(){
+
+  //头像点击动画
+  React.useEffect(() => {
+    const avatar_tip = tippy('#avatar', {
+      trigger: 'click',
+      arrow: false,
+      placement: 'bottom',
+      theme: 'material'
+    });
+    const avatar = document.getElementById('avatar');
+    if(avatar!=undefined){
+        avatar.addEventListener('click', function(){ 
+            avatar.setAttribute('style','animation: shake 1s');
+            setTimeout(function(){
+                avatar.setAttribute('style','animation: none');
+                avatar_tip[0].hide()
+            }, 1000)
+        })
+    }
+  }, []);
 
   return(
       <main className="max-w-xl mx-auto mt-24 mb-2 py-2 px-4">
