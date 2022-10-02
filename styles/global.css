@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
 
 body {
     font-family: 'Noto Sans SC', sans-serif;
@@ -250,4 +250,14 @@ svg {
         -webkit-transform: translate(0,0) rotate(0);
         transform: translate(0,0) rotate(0)
     }
+}
+
+.namecard-profile h1,
+.nav h1 {
+    font-family: 'Potta One', cursive;
+    font-weight: 400
+}
+
+.namecard-profile h1 small {
+    font-family: 'Noto sans SC', sans-serif;
 }

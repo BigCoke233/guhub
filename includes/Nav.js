@@ -1,21 +1,20 @@
 import Link from 'next/link'
 import * as React from 'react';
-import Darkmode from 'darkmode-js';
 
 import { CgDarkMode } from 'react-icons/cg' 
 import { IoMdArrowDropdown } from 'react-icons/io'
 
 function Item({link, children}) {
     return <Link href={link}><a className="
-    mx-0.5 py-3 md:py-5 px-2 inline-block
-    hover:bg-gray-100 transition 
+    mx-0.5 py-3 px-2 inline-block text-lg
+    hover:bg-slate-600 hover:text-white transition 
     ">{children}</a></Link>
 }
 
 function Drop({link, children}) {
-    return <Link href={link}><a className="dropdown-item
-    px-2 md:px-0 py-1.5 inline-block md:block md:border-b border-gray-100
-    hover:bg-gray-50 transition duration-300
+    return <Link href={link}><a className="dropdown-item text-lg
+    px-2 md:px-0 py-1.5 inline-block md:block md:border-b border-gray-100 text-black
+    hover:bg-slate-600 hover:text-white transition duration-300
     ">{children}</a></Link>
 }
 
@@ -44,8 +43,8 @@ function Dropdown({text, children, id}) {
 
     return (
         <div className="dropdown-box md:relative z-40
-        mx-0.5 py-3 md:py-5 px-2 cursor-pointer
-        hover:bg-gray-100 transition inline-block"
+        mx-0.5 py-3 px-2 cursor-pointer text-lg
+        hover:bg-slate-600 hover:text-white transition inline-block"
         id={id}
         >{text}<IoMdArrowDropdown/>
             <div className="dropdown hidden fixed top-14 right-1 left-1 md:absolute md:left-0 md:right-0 md:top-14
@@ -57,39 +56,15 @@ function Dropdown({text, children, id}) {
 
 
 export default function Nav() {
-    //启用夜间模式
-    const options = {
-        time: '0.5s', // default: '0.3s'
-        saveInCookies: false // default: true,
-    }
-    const darkmode = new Darkmode(options);
-
-    React.useEffect(() => {
-        const nav = document.getElementById('nav');
-        var headroom = function(){
-            if(document.documentElement.scrollTop!=0){
-                nav.setAttribute('style', 'box-shadow: 0 1px 4px 0 rgb(0 0 0 / 0.05)');
-            }else{
-                nav.setAttribute('style', 'box-shadow: 0 0 0 0 #fff');
-            }
-        }
-        headroom();
-        window.addEventListener('scroll', headroom);
-
-        const darkBtn = document.getElementById('darkmode');
-        darkBtn.addEventListener('click', function(){
-            darkmode.toggle();
-        });
-    }, [])
     return (
-        <header className="
+        <header className="nav
         fixed top-0 inset-x-0 w-full px-4 py-2 md:p-0 z-50
         flex flex-row justify-center md:justify-between items-center
         bg-white transition duration-300
         border-b-2 border-slate-600
         " id="nav">
-            <div className="nav-title hidden p-4 md:block">
-                <h1 className="font-bold text-lg">
+            <div className="nav-title hidden py-3 px-4 md:block">
+                <h1 className="font-bold text-xl">
                     <Link href="/"><a>Eltrac</a></Link>
                 </h1>
             </div>
@@ -101,10 +76,6 @@ export default function Nav() {
                     <Drop link="/social">社交</Drop>
                     <Drop link="/collections">收藏</Drop>
                 </Dropdown>
-                <button className="
-                mx-0.5 py-3 md:py-5 px-2 inline-block
-                hover:bg-gray-100 transition 
-                " id="darkmode"><CgDarkMode/></button>
             </div>
         </header>
     )

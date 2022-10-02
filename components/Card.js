@@ -13,12 +13,12 @@ export default function Card({ size, children, text, des, link, tag }){
     return (
         <a href={link} target="_blank" className={classFinal}>
             <div className="card flex flex-row items-center w-full
-            px-3 py-2 border-2 border-slate-600 gap-1
+            p-4 border-2 border-slate-600 gap-1
             transition duration-300 hover:shadow-md hover:-translate-y-1">
                 <div className="card-icon text-3xl">{children}</div>
                 <div className="card-content pl-2">
                     <h3 className="text-md font-semibold flex flex-row items-center">{text}{tag}</h3>
-                    <p className="text-sm text-gray-500">{des}</p>
+                    <p className="text-sm text-gray-500 truncate">{des}</p>
                 </div>
             </div>
         </a>

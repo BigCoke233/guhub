@@ -10,7 +10,7 @@ export default function Collections(data) {
             var content = post[i]['content'];
             let date = new Date(post[i].pubDate).toLocaleDateString('zh-cn');
             postList = postList+
-            '<article class="blogpost-item my-5 shadow border border-slate-600 border-2 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"><h2 class="text-2xl font-semibold mb-2"><a class="hover:text-green-500 transition" href='+post[i].link+'>'+post[i].title+'</a></h2><p class="text-gray-500">'+content+'</p>'+
+            '<article class="blogpost-item my-5 shadow border border-slate-600 border-2 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"><h2 class="text-2xl font-semibold mb-2"><a href='+post[i].link+'>'+post[i].title+'</a></h2><p class="text-gray-500">'+content+'</p>'+
             '<div class="mt-2 flex flex-row items-center justify-between flex-nowrap"><div class="text-sm text-gray-600">'+date+'</div><div><a href="'+post[i].link+'" target="_blank" class="hover:bg-gray-100 px-2 py-1 rounded transition">查看全文</a></div></div></article>'
             i++;
         }
