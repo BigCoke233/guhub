@@ -26,10 +26,11 @@ export default function App({ Component, pageProps }) {
   return (
     <div id="container">
       <Head>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet" />
           <meta charSet='utf-8' />
+          <link rel="icon" href="public/favicon.png" type="image/x-icon" />
       </Head>
       <NextNProgress color="rgb(71,85,105)"/>
       <Nav />
