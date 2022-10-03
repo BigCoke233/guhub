@@ -58,7 +58,7 @@ function Dropdown({text, children, id}) {
 export default function Nav() {
     return (
         <header className="nav
-        fixed top-0 inset-x-0 w-full px-4 py-2 md:p-0 z-50
+        fixed top-0 inset-x-0 w-full p-0 z-50
         flex flex-row justify-center md:justify-between items-center
         bg-white transition duration-300
         border-b-2 border-slate-600
@@ -74,6 +74,7 @@ export default function Nav() {
                 <Item link="/projects">项目</Item>
                 <Dropdown text="更多" id='more'>
                     <Drop link="/social">社交</Drop>
+                    <Drop link="/ingredients">成分</Drop>
                     <Drop link="/collections">收藏</Drop>
                 </Dropdown>
             </div>
