@@ -126,10 +126,6 @@ export default function Index(data){
             </div>
           </Section>
 
-          <Section title="最新文章" link="https://blog.guhub.cn" more="访问我的博客">
-            <div id="blogpost" className="flex flex-wrap -m-1" dangerouslySetInnerHTML={{__html: postList}} />
-          </Section>
-
           <Section title="代表作品" more="访问我的 GitHub 页面" link="https://github.com/BigCoke233">
             <div id="works" className="flex flex-wrap -m-1">
               <Prjct name="Matcha" link="https://github.com/BigCoke233/matcha" 
@@ -145,6 +141,10 @@ export default function Index(data){
                      icon="🍞" tooltip="简单的提示框 jQuery 插件" 
               />
             </div>
+          </Section>
+
+          <Section title="最新文章" link="https://blog.guhub.cn" more="访问我的博客">
+            <div id="blogpost" className="flex flex-wrap -m-1" dangerouslySetInnerHTML={{__html: postList}} />
           </Section>
 
           <Section title="我的笔记">
