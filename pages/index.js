@@ -2,18 +2,20 @@ import * as React from 'react';
 import Head from 'next/head';
 import Parser from "rss-parser";
 
+import {Note} from '/components';
+
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/material.css';
 
-function NameCard({ name, pronounce, description }) {
+function NameCard({ name, pronounce }) {
   return (<header className="namecard md:flex flex-row justify-items-center mb-6">
     <div data-tippy-content="给大佬磕个头" id="avatar" className="namecard-avatar flex-shrink w-1/3 mx-auto md:w-16 mt-1 rounded-full border-2 border-slate-600 bg-slate-600">
       <img src="/favicon.png" className="w-max block cursor-pointer select-none transition scale-125" />
     </div>
     <div className="namecard-profile flex-grow flex flex-col justify-center text-center mt-5 md:mt-0 md:text-left md:ml-5 leading-5">
       <h1 className="text-3xl font-bold mb-2">{name} <small className="text-xl text-gray-400 font-normal">[{pronounce}]</small></h1>
-      <p className="text-slate-600">{description}</p>
+      <p className="text-slate-600">前端攻城狮 · 游戏爱好者 · <a className="text-slate-500 underline underline-offset-4" href="https://clovet.org/" target="_blank">Clovet</a> 的发起人。</p>
     </div>
   </header>)
 }
@@ -44,16 +46,25 @@ function Section({ title, more, link, children }) {
 
 function Prjct({ link, icon, name, tooltip }){
   return(
-    <div className="w-1/2 md:w-1/4">
+    <div className="w-1/2 md:w-1/4 p-1">
       <a href={link} className="block border-2 border-slate-600
       transition-all duration-3000 hover:-translate-y-1 hover:shadow-lg"
       data-tippy-content={tooltip}>
         <div className="text-center text-5xl pt-4 bg-slate-200">
           <span className="block">{icon}</span>
         </div>
-        <div className="p-2 font-semibold text-lg text-center">{name}</div>
+        <div className="p-2 text-lg text-center">{name}</div>
       </a>
     </div>
+  )
+}
+
+function Social({ children, color, link, tip}) {
+  return(
+    <a data-tippy-content={tip} href={link} data-color={color} target="_blank" className="transition duration-3000 inline-block mr-2 text-xl font-bold text-slate-600 relative z-10">
+      {children}
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-slate-600 opacity-40 z-0"></div>
+    </a>
   )
 }
 
@@ -93,7 +104,7 @@ export default function Index(data){
       var content = post[i]['content'];
       let date = new Date(post[i].pubDate).toLocaleDateString('zh-cn');
       postList = postList+
-      '<article class="w-full md:w-1/3"><a href='+post[i].link+' class="block border-2 border-slate-600 p-4 transition-all duration-3000 hover:border-slate-500 hover:-translate-y-1 hover:shadow"><h3 class="text-md truncate">'+post[i].title+'</h3>'+
+      '<article class="w-full md:w-1/3 p-1"><a href='+post[i].link+' class="block border-2 border-slate-600 p-4 transition-all duration-3000 hover:border-slate-500 hover:-translate-y-1 hover:shadow"><h3 class="text-md truncate">'+post[i].title+'</h3>'+
       '<div class="mt-1 flex flex-row items-center justify-between flex-nowrap"><div class="text-sm text-gray-600 truncate">'+date+'</div></div></a></article>'
       i++;
     }
@@ -103,16 +114,24 @@ export default function Index(data){
       <div id="page">
         <Head><title>Eltrac</title></Head>
 
-        <NameCard name="Eltrac" pronounce="'eltræk" 
-        description="半吊子前端攻城狮，有很多奇怪的想法。" />
+        <NameCard name="Eltrac" pronounce="'eltræk" />
 
         <div id="index">
+          <Section>
+            <div className="mb-5">
+              <Social tip="我发牢骚的地方" color="twitter" link="https://twitter.com/Eltrac233">TWITTER</Social>
+              <Social tip="偶尔会做一些听译和字幕" color="bilibili" link="https://space.bilibili.com/384247770">BILIBILI</Social>
+              <Social tip="我在后室中文站的作者页，里面有我的作品" color="black" link="http://backrooms-wiki-cn.wikidot.com/eltrac">BACKROOMS</Social>
+              <Social tip="一个面向国内性少数群体的社区" color="clovet" link="https://www.clovet.org/u/Eltrac">CLOVET</Social>
+            </div>
+          </Section>
+
           <Section title="最新文章" link="https://blog.guhub.cn" more="访问我的博客">
-            <div id="blogpost" className="flex flex-wrap" dangerouslySetInnerHTML={{__html: postList}} />
+            <div id="blogpost" className="flex flex-wrap -m-1" dangerouslySetInnerHTML={{__html: postList}} />
           </Section>
 
           <Section title="代表作品" more="访问我的 GitHub 页面" link="https://github.com/BigCoke233">
-            <div id="works" className="flex flex-wrap">
+            <div id="works" className="flex flex-wrap -m-1">
               <Prjct name="Matcha" link="https://github.com/BigCoke233/matcha" 
                      icon="🍵" tooltip="简洁大气的 Typecho 主题" 
               />
@@ -129,7 +148,10 @@ export default function Index(data){
           </Section>
 
           <Section title="我的笔记">
-            <p className="text-lg">这个功能正在开发中。</p>
+            <Note>这个功能正在开发中，基于 Notion API。<br/>
+              以后将会作为日记之类的东西，时不时会更新。<br/>
+              <div className="text-right">——Eltrac</div>
+            </Note>
           </Section>
         </div> 
       </div>
@@ -137,8 +159,20 @@ export default function Index(data){
 }
 
 export async function getStaticProps() {
+  //获取博客文章
   const parser = new Parser();
   const data = await parser.parseURL("https://blog.guhub.cn/feed/");
+
+  //获取 Notion 笔记
+  const { Client } = require('@notionhq/client');
+  process.env.NOTION_API_KEY = 'secret_HHGqqB5IidYOPA3KcWgwKxzcG8zYFIh0TgoPuaK9LMV';
+  const notion = new Client({ auth: process.env.NOTION_API_KEY });
+
+  (async () => {
+    const databaseId = '00d5ad6ea6754a14a56109690870c841';
+    const response = await notion.databases.retrieve({ database_id: databaseId });
+    console.log(response);
+  })();
 
   return {
     props: { data: data },

@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.2",
     "moment": "^2.29.4",
     "next": "latest",
     "nextjs-progressbar": "^0.0.14",

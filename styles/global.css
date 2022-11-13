@@ -107,21 +107,37 @@ svg {
     font-family: 'Noto sans SC', sans-serif;
 }
 
-@media (min-width:768px) {
-    #blogpost > :not(:first-child, :last-child) {
-        padding-left: .5em;
-        padding-right: .5em
-    }
-    #works > div:nth-child(1) {
-        padding-right: .25em
-    }
-    #works > div:nth-child(2),
-    #works > div:nth-child(3) {
-        padding-left: .25em;
-        padding-right: .25em
-    }
-    #works > div:nth-child(4) {
-        padding-left: .25em
-    }
+.note article {
+    background: linear-gradient(transparent 95%, #cdd 0);
+    line-height: 2em;
+    background-size: 100% 2em;
+    background-attachment: local;
+}
 
+[data-color="twitter"]:hover {
+    color: rgb(26,140,216)
+}
+[data-color="twitter"]:hover div {
+    background-color: rgb(26,140,216)
+}
+
+[data-color="bilibili"]:hover {
+    color: rgb(251,114,153)
+}
+[data-color="bilibili"]:hover div {
+    background-color: rgb(251,114,153)
+}
+
+[data-color="clovet"]:hover {
+    color: rgb(213,129,188)
+}
+[data-color="clovet"]:hover div {
+    background-color: rgb(213,129,188)
+}
+
+[data-color="black"]:hover {
+    color: #666
+}
+[data-color="black"]:hover div {
+    background-color: #666
 }

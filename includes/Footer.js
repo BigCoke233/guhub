@@ -1,6 +1,5 @@
 import moment from 'moment';
-import { TbBrandNextjs, TbBrandReactNative, TbBrandVercel, TbBrandTailwind } from 'react-icons/tb';
-import { ExL } from '/components'
+import { TbBrandNextjs, TbBrandReactNative, TbBrandVercel, TbBrandTailwind } from 'react-icons/tb'
 
 export default function Footer(){
     return(
