@@ -4,8 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap');
 
+* {
+    box-sizing: border-box
+}
+
 body {
     font-family: 'Noto Sans SC', sans-serif;
+    background-color: #fefefe;
+    border-top: 3px solid #666
 }
 
 svg {
@@ -20,49 +26,6 @@ svg {
 .card-icon svg {
     margin-left: .2rem;
     margin-right: .2rem
-}
-
-/* dropdown */
-#nav .dropdown-item:last-child {
-    border: none
-}
-
-.dropdown-box svg {
-    transition: transform .3s
-}
-.dropdown-box.open svg {
-    transform: rotate(90deg)
-}
-
-/* 深色模式 */
-#nav {
-    transition-duration: 0!important
-}
-.darkmode--activated #nav {
-    background-color: #000;
-    color: #fff
-}
-
-.darkmode--activated #nav a:hover,
-.darkmode--activated #nav .dropdown-box:hover,
-.darkmode--activated #nav button:hover {
-    background-color: #333
-}
-
-.darkmode--activated #nav .dropdown-item,
-.darkmode--activated #nav .dropdown {
-    background-color: #111;
-    border-color: #333
-}
-
-.darkmode--activated .card,
-.darkmode--activated a.tag,
-.darkmode--activated .btn {
-    background-color: #ddd
-}
-
-.darkmode--activated .blogpost-item {
-    border-color: #ccc
 }
 
 /* 淡入动画 */
@@ -123,13 +86,6 @@ svg {
 	transition: .2s
 }
 
-.darkmode--activated::-webkit-scrollbar {
-    background: #000
-}
-.darkmode--activated::-webkit-scrollbar-thumb {
-	background: rgb(221,58,161);
-}
-
 @keyframes shake {
     0%, 100% {
         transform: translateY(0) rotate(0)
@@ -147,13 +103,25 @@ svg {
         transform: translateY(.25em) rotate(160deg)
     }
 }
-
-.namecard-profile h1,
-.nav h1 {
-    font-family: 'Potta One', cursive;
-    font-weight: 400
-}
-
 .namecard-profile h1 small {
     font-family: 'Noto sans SC', sans-serif;
+}
+
+@media (min-width:768px) {
+    #blogpost > :not(:first-child, :last-child) {
+        padding-left: .5em;
+        padding-right: .5em
+    }
+    #works > div:nth-child(1) {
+        padding-right: .25em
+    }
+    #works > div:nth-child(2),
+    #works > div:nth-child(3) {
+        padding-left: .25em;
+        padding-right: .25em
+    }
+    #works > div:nth-child(4) {
+        padding-left: .25em
+    }
+
 }

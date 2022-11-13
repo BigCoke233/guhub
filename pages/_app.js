@@ -1,7 +1,7 @@
 import '../styles/global.css';
 
 import Head from 'next/head';
-import { Nav, Footer } from '/includes';
+import { Footer } from '/includes';
 
 import * as React from "react";
 import Router from "next/router";
@@ -33,9 +33,10 @@ export default function App({ Component, pageProps }) {
           <link rel="icon" href="favicon.png" type="image/x-icon" />
       </Head>
       <NextNProgress color="rgb(71,85,105)"/>
-      <Nav />
-      <Component {...pageProps} />
-      <Footer />
+      <main className="max-w-2xl mx-auto mt-16 mb-2 py-2 px-4">
+        <Component {...pageProps} />
+        <Footer />
+      </main>
     </div>
   )
 }
