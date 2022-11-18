@@ -114,6 +114,12 @@ svg {
     background-size: 100% 2em;
     background-attachment: local;
 }
+.note a {
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+    text-decoration-thickness: 2px;
+    opacity: 0.6
+}
 
 [data-color="twitter"]:hover {
     color: rgb(26,140,216)

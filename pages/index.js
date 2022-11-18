@@ -2,7 +2,7 @@ import * as React from 'react';
 import Head from 'next/head';
 import Parser from "rss-parser";
 
-import { useEffect } from "react";
+import { Note } from '/components';
 
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
@@ -49,7 +49,7 @@ function Prjct({ link, icon, name, tooltip }){
     <div className="w-1/2 md:w-1/4 p-1">
       <a href={link} className="block border-2 border-slate-600 bg-white
       transition-all duration-3000 hover:-translate-y-1 hover:shadow-lg"
-      data-tippy-content={tooltip}>
+      data-tippy-content={tooltip}  target="_blank">
         <div className="text-center text-5xl pt-4 bg-slate-200">
           <span className="block">{icon}</span>
         </div>
@@ -103,7 +103,7 @@ export default function Index(data, notes){
     if(i<6){
       let date = new Date(post[i].pubDate).toLocaleDateString('zh-cn');
       postList = postList+
-      '<article class="w-full md:w-1/3 p-1"><a href='+post[i].link+' class="block bg-white border-2 border-slate-600 p-4 transition-all duration-3000 hover:border-slate-500 hover:-translate-y-1 hover:shadow"><h3 class="text-md truncate">'+post[i].title+'</h3>'+
+      '<article class="w-full md:w-1/3 p-1"><a href='+post[i].link+' class="block bg-white border-2 border-slate-600 p-4 transition-all duration-3000 hover:border-slate-500 hover:-translate-y-1 hover:shadow" target="_blank"><h3 class="text-md truncate">'+post[i].title+'</h3>'+
       '<div class="mt-1 flex flex-row items-center justify-between flex-nowrap"><div class="text-sm text-gray-600 truncate">'+date+'</div></div></a></article>'
       i++;
     }
@@ -143,12 +143,19 @@ export default function Index(data, notes){
             </div>
           </Section>
 
-          <Section title="最新文章" link="https://blog.guhub.cn" more="访问我的博客">
+          <Section title="博客文章" link="https://blog.guhub.cn" more="访问我的博客">
             <div id="blogpost" className="flex flex-wrap -m-1" dangerouslySetInnerHTML={{__html: postList}} />
           </Section>
 
-          <Section title="">
-            <div id="notes" />
+          <Section title="自我介绍">
+            <Note>一只脑子被想法填满，焦灼于自我价值之实现的无尾熊。<br /><br />
+            喜欢虚幻，喜欢怪谈，喜欢简单而富有内涵的故事。认为人们创造的故事世界是<strong>脱离于现实的理想之地</strong>，无论是小说还是电子游戏。
+            渴望得到认同，看到自己创造的东西得到欣赏是这个世界上最棒的事情。<br /><br />
+            我运营自己的<a href="https://blog.guhub.cn" target="_blank">独立博客</a>，喜欢用有条理且有逻辑的文字来表达自己。<br />
+            我喜欢写故事，偶尔在博客上发一些小说，同时也为 <a href="http://backrooms-wiki-cn.wikidot.com/" target="_blank">Backrooms</a> 编写设定。<br />
+            我是个半吊子前端开发者，喜欢倒腾自己的网站，偶尔会产出一些<a href="https://github.com/BigCoke233" target="_blank">作品</a>。<br />
+            算是半个手帐爱好者，但是这就不能展示给你们看啦。<br /><br />
+            如果你有兴趣的话，可以在 <a href="https://twitter.com/Eltrac233" target="_blank">Twitter</a> 和 <a href="https://t.me/Eltrac" target="_blank">Telegram</a> 上找到我。</Note>
           </Section>
         </div> 
       </div>
