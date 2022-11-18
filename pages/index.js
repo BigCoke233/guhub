@@ -2,7 +2,7 @@ import * as React from 'react';
 import Head from 'next/head';
 import Parser from "rss-parser";
 
-import {Note} from '/components';
+import { useEffect } from "react";
 
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
@@ -47,7 +47,7 @@ function Section({ title, more, link, children }) {
 function Prjct({ link, icon, name, tooltip }){
   return(
     <div className="w-1/2 md:w-1/4 p-1">
-      <a href={link} className="block border-2 border-slate-600
+      <a href={link} className="block border-2 border-slate-600 bg-white
       transition-all duration-3000 hover:-translate-y-1 hover:shadow-lg"
       data-tippy-content={tooltip}>
         <div className="text-center text-5xl pt-4 bg-slate-200">
@@ -68,7 +68,7 @@ function Social({ children, color, link, tip}) {
   )
 }
 
-export default function Index(data){
+export default function Index(data, notes){
 
   //头像点击动画
   React.useEffect(() => {
@@ -100,15 +100,15 @@ export default function Index(data){
   var post = data.data.items
   var postList=''; var i=0;
   post.forEach(function(){
-    if(i<3){
-      var content = post[i]['content'];
+    if(i<6){
       let date = new Date(post[i].pubDate).toLocaleDateString('zh-cn');
       postList = postList+
-      '<article class="w-full md:w-1/3 p-1"><a href='+post[i].link+' class="block border-2 border-slate-600 p-4 transition-all duration-3000 hover:border-slate-500 hover:-translate-y-1 hover:shadow"><h3 class="text-md truncate">'+post[i].title+'</h3>'+
+      '<article class="w-full md:w-1/3 p-1"><a href='+post[i].link+' class="block bg-white border-2 border-slate-600 p-4 transition-all duration-3000 hover:border-slate-500 hover:-translate-y-1 hover:shadow"><h3 class="text-md truncate">'+post[i].title+'</h3>'+
       '<div class="mt-1 flex flex-row items-center justify-between flex-nowrap"><div class="text-sm text-gray-600 truncate">'+date+'</div></div></a></article>'
       i++;
     }
   });
+  
 
   return(
       <div id="page">
@@ -147,11 +147,8 @@ export default function Index(data){
             <div id="blogpost" className="flex flex-wrap -m-1" dangerouslySetInnerHTML={{__html: postList}} />
           </Section>
 
-          <Section title="我的笔记">
-            <Note>这个功能正在开发中，基于 Notion API。<br/>
-              以后将会作为日记之类的东西，时不时会更新。<br/>
-              <div className="text-right">——Eltrac</div>
-            </Note>
+          <Section title="">
+            <div id="notes" />
           </Section>
         </div> 
       </div>
@@ -162,17 +159,6 @@ export async function getStaticProps() {
   //获取博客文章
   const parser = new Parser();
   const data = await parser.parseURL("https://blog.guhub.cn/feed/");
-
-  //获取 Notion 笔记
-  const { Client } = require('@notionhq/client');
-  process.env.NOTION_API_KEY = 'secret_HHGqqB5IidYOPA3KcWgwKxzcG8zYFIh0TgoPuaK9LMV';
-  const notion = new Client({ auth: process.env.NOTION_API_KEY });
-
-  (async () => {
-    const databaseId = '00d5ad6ea6754a14a56109690870c841';
-    const response = await notion.databases.retrieve({ database_id: databaseId });
-    console.log(response);
-  })();
 
   return {
     props: { data: data },
