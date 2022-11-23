@@ -113,10 +113,9 @@ export default function Index(data, notes){
   return(
       <div id="page">
         <Head><title>Eltrac</title></Head>
-
         <NameCard name="Eltrac" pronounce="'eltræk" />
 
-        <div id="index">
+        <div id="page-container">
           <Section>
             <div className="mb-5">
               <Social tip="我发牢骚的地方" color="twitter" link="https://twitter.com/Eltrac233">TWITTER</Social>
