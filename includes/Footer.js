@@ -3,7 +3,7 @@ import { TbBrandNextjs, TbBrandReactNative, TbBrandVercel, TbBrandTailwind } fro
 
 export default function Footer(){
     return(
-    <footer className="mb-10 mt-6 text-sm text-gray-500">
+    <footer className="text-sm text-gray-400 pb-10 px-8 flex justify-between flex-row-reverse">
         <p>bulit with&nbsp;
           <a data-tippy-content="React" href="https://github.com/facebook/react" title="React" target="_blank" className="hover:text-black transition duration-3000"><TbBrandReactNative/></a>&nbsp;
           <a data-tippy-content="Next.js" href="https://nextjs.org/" title="Next.js" target="_blank" className="hover:text-black transition duration-3000"><TbBrandNextjs/></a>&nbsp;

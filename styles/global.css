@@ -13,6 +13,9 @@ body {
     background-image: radial-gradient(#ddd 1px,transparent 0),radial-gradient(#ddd 1px,transparent 0);
     background-position: 0 0,25px 25px;
     background-size: 50px 50px;
+    background-color: #fefefe;
+    color: #333;
+    font-family: 'Noto Serif SC', serif;
 }
 
 svg {
@@ -20,92 +23,25 @@ svg {
     vertical-align: middle;
     font-size: 1.2em
 }
-.exl svg,
-.tag svg {
-    font-size: 1em
-}
-.card-icon svg {
-    margin-left: .2rem;
-    margin-right: .2rem
-}
-
-/* 淡入动画 */
-.fadein-animate {
-    animation: fadeIn ease-in .3s;
-    -webkit-animation: fadeIn ease-in .3s;
-}
-.dropdown:not(.fadein-animate) {
-    animation: fadeOut ease-in .3s;
-    -webkit-animation: fadeOut ease-in .3s;
-}
-@keyframes fadeIn {
-    from { opacity:0; transform: translateY(-1em) }
-    to {opacity:1; transform:translateY(0)}
-}
-@keyframes fadeOut {
-    to { opacity:0; transform: translateY(-1em) }
-    from {opacity:1; transform:translateY(0)}
-}
 
 /* 页面切换动画 */
-#container {
+#app {
     transition: opacity .3s;
 }
 .fadeout {
     opacity: 0
 }
 
-@media (min-width: 768px){
-    .card-small.card-body:nth-of-type(odd){
-        padding-right: .25rem
-    }
-    .card-small.card-body:nth-of-type(even){
-        padding-left: .25rem
-    }
-
-    .card-tiny.card-body:nth-of-type(odd){
-        padding: 0 .25rem
-    }
-    .card-tiny.card-body:nth-of-type(even){
-        padding: 0 .25rem
-    }
-}
-
 ::selection {
-    background: #ddd
+    background: rgba(0,0,0,0.1)
+}
+#sidebar ::selection {
+    background: rgba(255,255,255,0.2)
 }
 
 /* ScrollBar */
 ::-webkit-scrollbar {
-	width: 5px;
-}
-::-webkit-scrollbar-button {
 	display: none
-}
-::-webkit-scrollbar-thumb {
-	background: rgb(71,85,105);
-	transition: .2s
-}
-
-@keyframes shake {
-    0%, 100% {
-        transform: translateY(0) rotate(0)
-    }
-    12.5% {
-        transform: translateY(-0.75em) rotate(60deg)
-    }
-    25%, 75% {
-        transform: translateY(-1em) rotate(90deg)
-    }
-    47.5% {
-        transform: translateY(-0.75em) rotate(120deg)
-    }
-    50% {
-        transform: translateY(.25em) rotate(160deg)
-    }
-}
-.namecard-profile h1 small {
-    font-family: 'Noto sans SC', sans-serif;
 }
 
 .note article {
@@ -121,30 +57,32 @@ svg {
     opacity: 0.6
 }
 
-[data-color="twitter"]:hover {
-    color: rgb(26,140,216)
+/* 抽屉 */
+body {
+    overflow-x: hidden;
+    transition: transform .3s;
 }
-[data-color="twitter"]:hover div {
-    background-color: rgb(26,140,216)
+body.menu-open {
+    transform: translate3D(-100vw, 0, 0);
+    overflow-y:hidden
 }
-
-[data-color="bilibili"]:hover {
-    color: rgb(251,114,153)
+#sidebar {
+    right: -100vw;
+    width: 100vw;
+    opacity: 0;
+    transition: opacity 0.3s
 }
-[data-color="bilibili"]:hover div {
-    background-color: rgb(251,114,153)
+body.menu-open #sidebar {
+    opacity: 1
 }
-
-[data-color="clovet"]:hover {
-    color: rgb(213,129,188)
-}
-[data-color="clovet"]:hover div {
-    background-color: rgb(213,129,188)
-}
-
-[data-color="black"]:hover {
-    color: #666
-}
-[data-color="black"]:hover div {
-    background-color: #666
+@media screen and (min-width: 768px) {
+    body.menu-open {
+        transform: translate3D(-15rem, 0, 0)
+    }
+    #sidebar {
+        right: -15rem;
+        width: 15rem;
+        transition: none;
+        opacity: 1!important
+    }
 }

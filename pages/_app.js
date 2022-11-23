@@ -1,7 +1,7 @@
 import '../styles/global.css';
 
 import Head from 'next/head';
-import { Footer } from '/includes';
+import { Footer, Nav, Sidebar } from '/includes';
 
 import * as React from "react";
 import Router from "next/router";
@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
 
   React.useEffect(() => {
     //页面切换动画
-    const container = document.getElementById('container');
+    const container = document.getElementById('app');
     var pageFade = function(){
       if(container.classList.contains('fadeout')){
         container.classList.remove('fadeout')
@@ -21,22 +21,40 @@ export default function App({ Component, pageProps }) {
     }
     Router.events.on('routeChangeStart', pageFade);
     Router.events.on('routeChangeComplete', pageFade);
+
+    //监听滚动，隐藏侧边栏
+    window.addEventListener('scroll', function(e){
+        const main = document.getElementsByTagName('body')[0];
+        const navButton = document.getElementById('menu-icon');
+
+        if(main.classList.contains('menu-open') && window.screen.availWidth>768) {
+          e.preventDefault();
+          main.classList.remove('menu-open');
+          navButton.classList.remove('change')
+        }
+    })
   }, []);
 
   return (
-    <div id="container">
+    <div id="app">
       <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link href="https://fonts.googleapis.com/css2?family=Abel&family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
           <meta charSet='utf-8' />
           <link rel="icon" href="favicon.png" type="image/x-icon" />
       </Head>
-      <NextNProgress color="rgb(71,85,105)"/>
-      <main className="max-w-2xl mx-auto mt-16 mb-2 py-2 px-4">
-        <Component {...pageProps} />
+      <header id="header">
+        <NextNProgress color="rgb(71,85,105)"/>
+      </header>
+      <main id="page" className="min-h-screen">
+        <Nav />
+        <div className="max-w-3xl mx-auto pt-24 pb-10 px-8 md:px-0">
+          <Component {...pageProps} />
+        </div>
         <Footer />
       </main>
+      <Sidebar />
     </div>
   )
 }
