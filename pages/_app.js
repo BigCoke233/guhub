@@ -42,6 +42,8 @@ export default function App({ Component, pageProps }) {
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link href="https://fonts.googleapis.com/css2?family=Abel&family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
           <meta charSet='utf-8' />
+          <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+          <meta http-equiv="X-UA-COMPATIBLE" CONTENT="IE=edge,chrome=1" />
           <link rel="icon" href="favicon.png" type="image/x-icon" />
       </Head>
       <header id="header">
