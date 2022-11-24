@@ -27,11 +27,11 @@ export default function Index(data){
   return(
       <div id="page">
         <style jsx>{`
+          #latest-post {
+            box-shadow: 0.25rem 0.25rem 0 #555;
+            transition: 0.3s
+          }
           @media screen and (min-width: 768px){
-            #latest-post {
-              box-shadow: 0.25rem 0.25rem 0 #555;
-              transition: 0.3s
-            }
             #latest-post:hover {
               box-shadow: 1rem 1rem 0 #555;
               transform: translate3D(-0.5rem, -0.5rem, 0)
