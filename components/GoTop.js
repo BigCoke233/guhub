@@ -50,8 +50,8 @@ export default function GoTop() {
     }, [])
 
     return (
-        <div id="gotop-box" className="fixed right-10 bottom-16 md:block">
-            <button id="gotop" className="sacle-0 transition duration-300">
+        <div id="gotop-box" className="fixed right-10 bottom-16">
+            <button id="gotop" className="sacle-0 transition duration-300 hidden lg:block">
                 <span className="block text-3xl text-gray-500 hover:text-gray-700
                 transition duration-300" data-tippy-content="返回顶部"><TbHandFinger /></span>
             </button>

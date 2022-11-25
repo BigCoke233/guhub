@@ -53,7 +53,7 @@ export default function App({ Component, pageProps }) {
       </header>
       <main id="page" className="min-h-screen">
         <Nav />
-        <div className="max-w-3xl mx-auto pt-24 pb-10 px-8 md:px-0">
+        <div className="max-w-3xl mx-auto pt-24 pb-10 px-8 md:px-6">
           <Component {...pageProps} />
         </div>
         <GoTop />

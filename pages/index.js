@@ -50,6 +50,33 @@ export default function Index(data){
           #page-container section:last-child {
             margin-bottom: 0
           }
+
+          #random-words h2 {
+            height: 1.25em;
+            position: relative;
+            cursor: pointer
+          }
+          #random-words h2 #fake-words,
+          #random-words h2 #real-words {
+            position: absolute;
+            left: 0; right: 0
+          }
+          #random-words h2 #fake-words {
+            opacity: 1
+          }
+          #random-words h2 #real-words {
+            opacity: 0
+          }
+          #random-words h2:hover #fake-words {
+            opacity: 0
+          }
+          #random-words h2:hover #real-words {
+            opacity: 1
+          }
+        
+          #random-speech p {
+            margin: 0.5rem 0
+          }
         `}</style>
 
         <Head><title>一只考拉 / Eltrac</title></Head>
@@ -57,9 +84,9 @@ export default function Index(data){
 
           <section id="latest-post-box">
             <a href={post[0].link} target="_blank">
-              <article id="latest-post" className="bg-white border-2 border-gray-700 p-6 md:p-10">
-                <div id="post-excerpt" className="text-xl md:text-2xl font-semibold">{excerpt}</div>
-                <h3 className="text-lg mt-4 flex flex-col md:flex-row md:justify-between">
+              <article id="latest-post" className="bg-white border-2 border-gray-700 p-6 sm:p-10">
+                <div id="post-excerpt" className="text-xl sm:text-2xl font-semibold">{excerpt}</div>
+                <h3 className="text-lg mt-4 flex flex-col sm:flex-row sm:justify-between">
                   <a className="underline underline-offset-8" 
                   href={post[0].link}>{post[0].title}</a>
                   <span className="text-gray-500">{date} / 博客文章</span>
@@ -70,7 +97,7 @@ export default function Index(data){
 
           <section id="related-links">
             <div className="flex flex-wrap md:flex-nowrap -m-3">
-              <Rlink title="咖啡厅" link="https://blog.guhub.cn" subTitle="考拉咖啡馆"
+              <Rlink title="咖啡厅" link="https://blog.guhub.cn" subTitle="考拉咖啡馆 · 博客"
               des="一个清净的好去处，有一只考拉在这里胡言乱语。">
                 <GiCoffeeMug />
               </Rlink>
@@ -80,15 +107,18 @@ export default function Index(data){
                 <GiSpermWhale />
               </Rlink>
 
-              <Rlink title="异闻录" subTitle="敬请期待"
-              des="探索脱离于现实的怪异之地和未曾发现的生物。">
+              <Rlink title="第 712 层" link="http://backrooms-wiki-cn.wikidot.com/eltrac" subTitle="阈限 · 怪谈"
+              des="后室，但是有考拉。来看看我为 Backrooms 系列编写的文章。">
                 <GiDodging />
               </Rlink>
             </div>
           </section>
 
           <section id="random-words" className="border-t-2 border-b-2 border-gray-700 py-5 md:px-2 text-center">
-            <h2 className="text-3xl text-gray-700 font-bold tracking-widest">问渠哪得清如许</h2>
+            <h2 className="text-3xl text-gray-700 font-bold tracking-widest">
+              <span id="fake-words" className="transition">问渠哪得清如许</span>
+              <span id="real-words" className="transition">唯有<span className="bg-gray-700 text-white">开源</span>活水来</span>
+            </h2>
           </section>
 
           <section id="projects">
@@ -106,6 +136,27 @@ export default function Index(data){
               link="https://github.com/BigCoke233/mirecho"
               tippy="完全基于 GitHub 的纯静态博客系统"><GiNotebook /></Plink>
             </div>
+          </section>
+
+          <section id="random-speech" className="border-2 border-gray-700 px-6 py-5 text-lg font-semibold bg-white">
+            <p><strong>如果你在不正确的地方从互联网切出，你终将坠入「考拉室」，这里只有过剩的自我意识和格格不入的奇怪文字。 逻辑至上的交流理想和焦灼与自我价值之实现的迫切欲望在持续地轰鸣。 倘若你听见有什么东西在附近徘徊，不必担心，因为它…… 是一只考拉。</strong></p>
+            <div className="border-t-2 border-gray-700 my-3"></div>
+            <p>你好，这里是 Eltrac，是一只考拉，<a href="https://www.16personalities.com/ch/infp-%E4%BA%BA%E6%A0%BC" target="_blank"
+            className="underline underline-offset-4">INFP-T</a>，如你所见，还是个谜语人。</p>
+            <p className="md:flex">
+              <strong className="flex-shrink-0 md:mr-3">喜欢</strong> 
+              折腾网站、前端设计、写小说、编故事、怪谈、哲学、做手帐、猫猫、狗狗、鹦鹉、猫头鹰、绿色、书本、风拂过毛孔的感觉、做自己、DST、Minecraft、宝可梦、瑞克和莫蒂、美剧、语言、翻译、逻辑、各有取舍的交流……
+            </p>
+            <p className="md:flex">
+              <strong className="flex-shrink-0 md:mr-3">讨厌</strong> 
+              人类、父权制、烟酒、无端愤怒、自以为优越之人、听不进道理之人、星座（因为自己是双子被骂渣男）、梗小鬼、世界上所有的节肢动物……
+            </p>
+            <p>如果你想的话，可以通过
+              <a href="mailto:hi@guhub.cn" target="_blank"
+              className="underline underline-offset-8 mx-1">hi@guhub.cn</a> /&nbsp;
+              <a href="https://t.me/Eltrac" target="_blank"
+              className="underline underline-offset-8 mx-1">Telegram</a>
+              跟我聊天。</p>
           </section>
         </div> 
       </div>
@@ -136,7 +187,7 @@ function Rlink({ children, title, subTitle, des, link}){
 function Plink({ title, tippy, des, link, children }){
   //Project links
   return (
-    <a href={link} target="_blank" className="w-full md:w-1/2 p-3 bg-white">
+    <a href={link} target="_blank" className="w-full sm:w-1/2 p-3 bg-white">
       <div className="border-2 border-gray-700 p-6 h-full relative 
       transition duration-300 hover:shadow-lg hover:-translate-y-2 overflow-hidden
       flex flex-col justify-between" data-tippy-content={tippy}>
@@ -144,7 +195,8 @@ function Plink({ title, tippy, des, link, children }){
           <h3 className="text-2xl font-bold">{title}</h3>
           <p className="my-2">{des}</p>
         </div>
-        <div className="link-icon absolute opacity-30 z-10 top-3 right-4 text-7xl">
+        <div className="link-icon absolute opacity-30 z-10 top-3 right-4 text-7xl
+        hidden md:block">
           {children}
         </div>
       </div>

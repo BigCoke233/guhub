@@ -64,7 +64,7 @@ export default function Sidebar() {
             <div id="sidebar-content" className="p-8 pt-3 md:pt-3 text-gray-200 relative
             flex flex-col justify-between">
                 <section>
-                    <Link href="/about">
+                    <Link href="/">
                         <div id="weird-box" className="text-sm border border-gray-100 p-2 mb-5 cursor-pointer font-semibold
                         hover:bg-gray-100 hover:text-black transition duration-300" style={{ boxShadow: '0.23rem 0.23rem 0 #ddd' }}>
                             &emsp;&emsp;如果你在不正确的地方从互联网切出，你终将坠入「考拉室」，这里只有过剩的自我意识和格格不入的奇怪文字。
@@ -73,8 +73,8 @@ export default function Sidebar() {
                     <h3>层级列表</h3>
                     <ul className="sidebar-list">
                         <li><Link href="/">考拉室</Link></li>
-                        <li><Link href="/about">自述间</Link></li>
                         <li><Link href="/friends">友人帐</Link></li>
+                        <li><Link href="/lab">玩具房</Link></li>
                     </ul>
                     <h3>实体名单</h3>
                     <ul className="sidebar-list">
