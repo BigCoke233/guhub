@@ -49,7 +49,7 @@ export default function Index(data){
           }
         `}</style>
 
-        <Head><title>Eltrac / 一只考拉</title></Head>
+        <Head><title>一只考拉 / Eltrac</title></Head>
         <div id="page-container">
 
           <section id="latest-post-box">
@@ -99,13 +99,13 @@ function Rlink({ children, title, subTitle, des, link}){
       <div className="border-2 border-gray-700 p-6 h-full relative overflow-hidden
       transition duration-300 hover:shadow-lg hover:-translate-y-2
       flex flex-col justify-between">
-        <div id="link-text">
+        <div className="link-text">
           <h3 className="text-2xl font-bold">{title}</h3>
           <p className="my-4">{des}</p>
         </div>
-        <div id="link-icon" className="absolute opacity-30"
+        <div className="link-icon absolute opacity-30"
         style={{right: '-1rem', bottom: '-1rem', fontSize: '5rem'}}>{children}</div>
-        <div id="link-subtitle" className="text-gray-400">
+        <div className="link-subtitle text-gray-400">
           {subTitle}
         </div>
       </div>

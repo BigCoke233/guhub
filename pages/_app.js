@@ -1,4 +1,5 @@
 import '../styles/global.css';
+import '../styles/textretty.css';
 
 import Head from 'next/head';
 import { Footer, Nav, Sidebar } from '/includes';
