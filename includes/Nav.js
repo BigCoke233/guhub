@@ -32,7 +32,8 @@ export default function Nav() {
               .container {
                 display: inline-block;
                 cursor: pointer;
-                user-select: none
+                user-select: none;
+                transition: 0.4s
               }
               .bar1, .bar2, .bar3 {
                 width: 2em;
@@ -40,6 +41,9 @@ export default function Nav() {
                 background-color: #777;
                 margin: 6px 0;
                 transition: 0.4s;
+              }
+              .change {
+                transform: rotate(180deg)
               }
               .change .bar1 {
                 transform: translate(0, .55em) rotate(-45deg);

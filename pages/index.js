@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 import Parser from "rss-parser";
+import Link from 'next/link'
 
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
@@ -84,8 +85,19 @@ export default function Index(data){
             </div>
           </section>
 
-          <section className="border-t-2 border-b-2 border-gray-700 py-5">
-            <h2 className="text-3xl text-gray-700 font-bold text-center">页面正在装修</h2>
+          <section id="anouncement" className="border-t-2 border-b-2 border-gray-700 py-5 md:px-2 text-center">
+            <h2 className="text-3xl text-gray-700 font-bold tracking-wider mb-4">公告</h2>
+            <p className="text-lg font-semibold">
+              原本在<a href="https://blog.guhub.cn/" target="_blank">考拉咖啡馆</a>的友情链接已经全部移动到了本站的<Link href="about">友人帐</Link>页面。<br/>
+              同时博客不再展示友情链接，若只想要与博客而非本站保留友链关系，并且想要终止友链关系，请在 GitHub 修改<a href="https://github.com/BigCoke233/guhub/blob/main/data/friends.json" target="_blank">这个文件</a>以删除你的链接。
+
+              <style>{`
+              #anouncement a {
+                text-decoration: underline;
+                text-underline-offset: 4px
+              }
+              `}</style>
+            </p>
           </section>
         </div> 
       </div>

@@ -3,23 +3,23 @@ import * as React from 'react';
 
 export default function Sidebar() {
 
-    React.useEffect(() => {
-        const navClose = document.getElementById('nav-close');
+    function close(){
         const main = document.getElementsByTagName('body')[0];
         const navButton = document.getElementById('menu-icon');
-        navClose.addEventListener('click', function(){
-            main.classList.remove('menu-open');
-            navButton.classList.remove('change')
-        })
+        main.classList.remove('menu-open');
+        navButton.classList.remove('change')
+    }
+
+    React.useEffect(() => {
+        const navClose = document.getElementById('nav-close');
+        navClose.addEventListener('click', close)
+
+        const weirdBox = document.getElementById('weird-box');
+        weirdBox.addEventListener('click', close)
 
         const listItems = document.querySelectorAll('.sidebar-list li a');
-        var i=0;
-        listItems.forEach(function(){
-            listItems[i].addEventListener('click',function(){
-                main.classList.remove('menu-open');
-                navButton.classList.remove('change')
-            })
-            i++
+        listItems.forEach(function(e){
+            e.addEventListener('click', close)
         })
     }, [])
 
@@ -28,7 +28,6 @@ export default function Sidebar() {
             <style jsx>{`
                 #sidebar-content {
                     font-family: 'Noto Serif SC', sans-serif;
-                    
                 }
                 #sidebar-title {
                     font-family: 'Abel';
@@ -66,7 +65,7 @@ export default function Sidebar() {
             flex flex-col justify-between">
                 <section>
                     <Link href="/about">
-                        <div className="text-sm border border-gray-100 p-2 mb-5 cursor-pointer font-semibold
+                        <div id="weird-box" className="text-sm border border-gray-100 p-2 mb-5 cursor-pointer font-semibold
                         hover:bg-gray-100 hover:text-black transition duration-300" style={{ boxShadow: '0.23rem 0.23rem 0 #ddd' }}>
                             &emsp;&emsp;如果你在不正确的地方从互联网切出，你终将坠入「考拉室」，这里只有过剩的自我意识和格格不入的奇怪文字。
                         </div>
@@ -74,7 +73,7 @@ export default function Sidebar() {
                     <h3>层级列表</h3>
                     <ul className="sidebar-list">
                         <li><Link href="/">考拉室</Link></li>
-                        <li><Link href="/about">坦白间</Link></li>
+                        <li><Link href="/about">自述间</Link></li>
                         <li><Link href="/friends">友人帐</Link></li>
                     </ul>
                     <h3>实体名单</h3>
