@@ -94,17 +94,17 @@ export default function Index(data){
           <section id="projects">
             <div className="flex flex-wrap -m-3">
               <Plink title="Matcha" des="林檎与日记本，抹茶与部落格" 
-              link="https://github.com/BigCoke233/matcha"
-              subTitle="Typecho 插件"><MdEmojiFoodBeverage /></Plink>
-              <Plink title="BracketDown" des="括号和文字共舞" 
+              link="https://github.com/BigCoke233/matcha" 
+              tippy="双栏文字向 Typecho 主题"><MdEmojiFoodBeverage /></Plink>
+              <Plink title="BracketDown" des="括号和文字共舞"
               link="https://github.com/BigCoke233/typecho-plugin-BracketDown"
-              subTitle="Typecho 主题"><BsBraces /></Plink>
+              tippy="Typecho MD 语法拓展插件"><BsBraces /></Plink>
               <Plink title="Miracles" des="生命与奇迹，记录心的律动" 
-              link="https://github.com/BigCoke233/miracles"
-              subTitle="Typecho 主题"><GiOpenChest /></Plink>
+              link="https://github.com/BigCoke233/miracles" 
+              tippy="400+ stars 的精品 Typecho 主题"><GiOpenChest /></Plink>
               <Plink title="Mirecho" des="章鱼猫和无效文字" 
               link="https://github.com/BigCoke233/mirecho"
-              subTitle="基于 GitHub 的博客系统"><GiNotebook /></Plink>
+              tippy="完全基于 GitHub 的纯静态博客系统"><GiNotebook /></Plink>
             </div>
           </section>
         </div> 
@@ -133,13 +133,13 @@ function Rlink({ children, title, subTitle, des, link}){
   )
 }
 
-function Plink({ title, subTitle, des, link, children }){
+function Plink({ title, tippy, des, link, children }){
   //Project links
   return (
     <a href={link} target="_blank" className="w-full md:w-1/2 p-3 bg-white">
-      <div className="border-2 border-gray-700 p-6 h-full relative
+      <div className="border-2 border-gray-700 p-6 h-full relative 
       transition duration-300 hover:shadow-lg hover:-translate-y-2 overflow-hidden
-      flex flex-col justify-between">
+      flex flex-col justify-between" data-tippy-content={tippy}>
         <div className="link-text z-20">
           <h3 className="text-2xl font-bold">{title}</h3>
           <p className="my-2">{des}</p>
