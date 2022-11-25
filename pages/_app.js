@@ -3,6 +3,7 @@ import '../styles/textretty.css';
 
 import Head from 'next/head';
 import { Footer, Nav, Sidebar } from '/includes';
+import { GoTop } from '/components';
 
 import * as React from "react";
 import Router from "next/router";
@@ -55,6 +56,7 @@ export default function App({ Component, pageProps }) {
         <div className="max-w-3xl mx-auto pt-24 pb-10 px-8 md:px-0">
           <Component {...pageProps} />
         </div>
+        <GoTop />
         <Footer />
       </main>
       <Sidebar />

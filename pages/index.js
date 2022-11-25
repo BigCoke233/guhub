@@ -85,19 +85,25 @@ export default function Index(data){
             </div>
           </section>
 
-          <section id="anouncement" className="border-t-2 border-b-2 border-gray-700 py-5 md:px-2 text-center">
-            <h2 className="text-3xl text-gray-700 font-bold tracking-wider mb-4">公告</h2>
-            <p className="text-lg font-semibold">
-              原本在<a href="https://blog.guhub.cn/" target="_blank">考拉咖啡馆</a>的友情链接已经全部移动到了本站的<Link href="about">友人帐</Link>页面。<br/>
-              同时博客不再展示友情链接，若只想要与博客而非本站保留友链关系，并且想要终止友链关系，请在 GitHub 修改<a href="https://github.com/BigCoke233/guhub/blob/main/data/friends.json" target="_blank">这个文件</a>以删除你的链接。
+          <section id="random-words" className="border-t-2 border-b-2 border-gray-700 py-5 md:px-2 text-center">
+            <h2 className="text-3xl text-gray-700 font-bold tracking-wider">问渠哪得清如许</h2>
+          </section>
 
-              <style>{`
-              #anouncement a {
-                text-decoration: underline;
-                text-underline-offset: 4px
-              }
-              `}</style>
-            </p>
+          <section id="projects">
+            <div className="flex flex-wrap -m-3">
+              <Plink title="Matcha" des="林檎与日记本，抹茶与部落格" 
+              link="https://github.com/BigCoke233/matcha"
+              subTitle="Typecho 主题" />
+              <Plink title="BracketDown" des="括号和文字共舞" 
+              link="https://github.com/BigCoke233/typecho-plugin-BracketDown"
+              subTitle="Typecho 主题" />
+              <Plink title="Miracles" des="生命与奇迹，记录心的律动" 
+              link="https://github.com/BigCoke233/typecho-plugin-BracketDown"
+              subTitle="Typecho 主题" />
+              <Plink title="Mirecho" des="章鱼猫和无效文字" 
+              link="https://github.com/BigCoke233/typecho-plugin-BracketDown"
+              subTitle="基于 GitHub 的博客系统" />
+            </div>
           </section>
         </div> 
       </div>
@@ -119,6 +125,25 @@ function Rlink({ children, title, subTitle, des, link}){
         style={{right: '-1rem', bottom: '-1rem', fontSize: '5rem'}}>{children}</div>
         <div className="link-subtitle text-gray-400">
           {subTitle}
+        </div>
+      </div>
+    </a>
+  )
+}
+
+function Plink({ title, subTitle, des, link}){
+  //Project links
+  return (
+    <a href={link} target="_blank" className="w-full md:w-1/2 p-3 bg-white">
+      <div className="border-2 border-gray-700 p-6 h-full relative overflow-hidden
+      transition duration-300 hover:shadow-lg hover:-translate-y-2
+      flex flex-col justify-between">
+        <div className="link-text">
+          <h3 className="flex flex-wrap md:flex-nowrap justify-between">
+            <span className="text-2xl font-bold">{title}</span>
+            <span className="text-gray-500 text-md">{subTitle}</span>
+          </h3>
+          <p className="my-2">{des}</p>
         </div>
       </div>
     </a>
