@@ -107,7 +107,7 @@ export default function Index(data){
                 <GiSpermWhale />
               </Rlink>
 
-              <Rlink title="第 712 层" link="http://backrooms-wiki-cn.wikidot.com/eltrac" subTitle="阈限 · 怪谈"
+              <Rlink title="第 712 层" link="http://backrooms-wiki-cn.wikidot.com/author:eltrac" subTitle="阈限 · 怪谈"
               des="后室，但是有考拉。来看看我为 Backrooms 系列编写的文章。">
                 <GiDodging />
               </Rlink>
@@ -145,17 +145,16 @@ export default function Index(data){
             className="underline underline-offset-4">INFP-T</a>，如你所见，还是个谜语人。</p>
             <p className="md:flex">
               <strong className="flex-shrink-0 md:mr-3">喜欢</strong> 
-              折腾网站、前端设计、写小说、编故事、怪谈、哲学、做手帐、猫猫、狗狗、鹦鹉、猫头鹰、绿色、书本、风拂过毛孔的感觉、做自己、DST、Minecraft、宝可梦、瑞克和莫蒂、美剧、语言、翻译、逻辑、各有取舍的交流……
+              折腾网站、前端设计、写小说、编故事、怪谈、哲学、做手帐、猫猫、狗狗、鹦鹉、猫头鹰、绿色、书本、风拂过毛孔的感觉、做自己、DST、Minecraft、宝可梦、瑞克和莫蒂、塔罗牌、语言、翻译、逻辑、各有取舍的交流……
             </p>
             <p className="md:flex">
               <strong className="flex-shrink-0 md:mr-3">讨厌</strong> 
-              人类、父权制、烟酒、无端愤怒、自以为优越之人、听不进道理之人、星座（因为自己是双子被骂渣男）、梗小鬼、世界上所有的节肢动物……
+              人类、父权制、烟酒、无端愤怒、自以为优越之人、听不进道理之人、梗小鬼、世界上所有的节肢动物……
             </p>
             <p>如果你想的话，可以通过
               <a href="mailto:hi@guhub.cn" target="_blank"
               className="underline underline-offset-8 mx-1">hi@guhub.cn</a> /&nbsp;
-              <a href="https://t.me/Eltrac" target="_blank"
-              className="underline underline-offset-8 mx-1">Telegram</a>
+              <a href="#" className="underline underline-offset-8 mx-1" data-tippy-content="Eltrac#4794">Discord</a>
               跟我聊天。</p>
           </section>
         </div> 
