@@ -83,7 +83,7 @@ export default function Index(data){
         <div id="page-container">
 
           <div className="bg-white border-2 border-gray-700 p-6 sm:p-10">
-            博客已经停用，网站准备重建。<br />
+            博客已经停用，网站准备重建。
             考拉很快回来
           </div>
 
