@@ -82,6 +82,11 @@ export default function Index(data){
         <Head><title>一只考拉 / Eltrac</title></Head>
         <div id="page-container">
 
+          <div className="bg-white border-2 border-gray-700 p-6 sm:p-10">
+            博客已经停用，网站准备重建。<br />
+            考拉很快回来
+          </div>
+
           <section id="latest-post-box">
             <a href={post[0].link} target="_blank">
               <article id="latest-post" className="bg-white border-2 border-gray-700 p-6 sm:p-10">
