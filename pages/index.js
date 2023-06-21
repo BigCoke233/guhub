@@ -87,19 +87,6 @@ export default function Index(data){
             考拉很快回来
           </div>
 
-          <section id="latest-post-box">
-            <a href={post[0].link} target="_blank">
-              <article id="latest-post" className="bg-white border-2 border-gray-700 p-6 sm:p-10">
-                <div id="post-excerpt" className="text-xl sm:text-2xl font-semibold">{excerpt}</div>
-                <h3 className="text-lg mt-4 flex flex-col sm:flex-row sm:justify-between">
-                  <a className="underline underline-offset-8" 
-                  href={post[0].link}>{post[0].title}</a>
-                  <span className="text-gray-500">{date} / 博客文章</span>
-                </h3>
-              </article>
-            </a>
-          </section>
-
           <section id="related-links">
             <div className="flex flex-wrap md:flex-nowrap -m-3">
               <Rlink title="咖啡厅" link="https://blog.guhub.cn" subTitle="考拉咖啡馆 · 博客"
@@ -206,15 +193,4 @@ function Plink({ title, tippy, des, link, children }){
       </div>
     </a>
   )
-}
-
-export async function getStaticProps() {
-  //获取博客文章
-  const parser = new Parser();
-  const data = await parser.parseURL("https://blog.guhub.cn/feed/");
-
-  return {
-    props: { data: data },
-    revalidate: 30 * 60, // 至少 30 分钟後去产生新页面
-  }
 }
